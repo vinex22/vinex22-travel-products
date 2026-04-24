@@ -3,6 +3,8 @@ import './globals.css';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { DiscountBanner } from '@/components/DiscountBanner';
+import { CartProvider } from '@/components/CartProvider';
+import { CartPanel } from '@/components/CartPanel';
 
 export const metadata: Metadata = {
   title: 'vinex22 — Travel, considered.',
@@ -20,10 +22,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen antialiased">
+        <CartProvider>
         <DiscountBanner />
         <Nav />
         <main>{children}</main>
         <Footer />
+        <CartPanel />
+        </CartProvider>
       </body>
     </html>
   );

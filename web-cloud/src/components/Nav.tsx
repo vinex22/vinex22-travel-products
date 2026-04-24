@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { categories } from '@/lib/catalog';
 import { ThemeToggle } from './ThemeToggle';
+import { BagButton } from './BagButton';
 
 // Apple-style global nav: 44px, translucent gray, icon-only utilities.
 export function Nav() {
@@ -39,12 +40,7 @@ export function Nav() {
               <path d="m20 20-3.5-3.5" />
             </svg>
           </button>
-          <button aria-label="Bag" className="opacity-80 hover:opacity-100 transition-opacity">
-            <svg width="14" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <path d="M6 7h12l-1.2 13.2a2 2 0 0 1-2 1.8h-5.6a2 2 0 0 1-2-1.8L6 7Z" />
-              <path d="M9 7V5a3 3 0 0 1 6 0v2" />
-            </svg>
-          </button>
+          <BagButton />
         </div>
       </nav>
     </header>

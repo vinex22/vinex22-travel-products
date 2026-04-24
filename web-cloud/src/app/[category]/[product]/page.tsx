@@ -2,6 +2,7 @@ import { categories, getCategory, getProduct, getProductsByCategory } from '@/li
 import { imageUrl } from '@/lib/imageUrl';
 import { ProductGallery } from '@/components/ProductGallery';
 import { Price } from '@/components/Price';
+import { AddToBag } from '@/components/AddToBag';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -34,10 +35,8 @@ export default async function ProductPage({ params }: { params: Promise<{ catego
             <h1 className="font-semibold tracking-[-0.025em] text-4xl md:text-5xl text-ink dark:text-paper">{p.name}</h1>
             <p className="mt-3 text-lg text-ink-soft dark:text-paper/75 font-light">{p.short}</p>
             <Price sku={`${p.id}-${p.colors[0].slug}`} fallback={p.price} className="mt-8 text-2xl text-ink dark:text-paper font-medium" />
-            <button className="mt-6 w-full md:w-auto rounded-full bg-[#0066cc] hover:bg-[#0077ed] text-white px-10 py-3 text-sm font-medium transition-colors">
-              Add to Bag
-            </button>
-            <p className="mt-3 text-xs text-ink-mute">Free shipping · Lifetime guarantee · Free repairs</p>
+            <AddToBag sku={`${p.id}-${p.colors[0].slug}`} name={p.name} price={p.price} image={p.image} href={`/${cat.slug}/${p.slug}`} />
+            <p className="mt-3 text-xs text-ink-mute">Free shipping · Lifetime guarantee · Free repairs · Contact Elaine Yeung for replacements</p>
 
             <div className="mt-12 border-t border-black/10 dark:border-white/10 pt-8">
               <p className="text-sm leading-relaxed text-ink-soft dark:text-paper/75">{p.long}</p>

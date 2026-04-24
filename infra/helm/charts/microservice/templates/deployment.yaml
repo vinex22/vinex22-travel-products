@@ -55,7 +55,7 @@ spec:
             - name: PORT
               value: "{{ .Values.port }}"
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: "http://otel-collector.observability.svc.cluster.local:4317"
+              value: "http://otel-collector-opentelemetry-collector.observability.svc.cluster.local:4317"
             - name: OTEL_SERVICE_NAME
               value: {{ include "microservice.name" . | quote }}
             - name: OTEL_RESOURCE_ATTRIBUTES

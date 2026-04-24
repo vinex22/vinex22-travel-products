@@ -14,6 +14,7 @@ env:
   NEXT_PUBLIC_IMAGE_BASE:   "/api/image"
   NEXT_PUBLIC_API_BASE:     "/api"
   PRICING_BASE:             "http://pricing-service:8080"
+  API_GATEWAY_BASE:         "http://api-gateway:8080"
   AZURE_STORAGE_ACCOUNT:    ""    # injected
   AZURE_STORAGE_CONTAINER:  "images"
 # Next.js doesn't ship /healthz; fall back to TCP socket probes on the http port.
@@ -45,4 +46,8 @@ ingress:
     - path: /api/price
       pathType: Prefix
     - path: /api/discount
+      pathType: Prefix
+    - path: /api/cart
+      pathType: Prefix
+    - path: /api/checkout
       pathType: Prefix
