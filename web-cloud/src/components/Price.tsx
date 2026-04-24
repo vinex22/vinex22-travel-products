@@ -40,15 +40,14 @@ export function Price({
   }, [sku]);
 
   const display = price ? price.final_price : fallback;
+  const hasDiscount = price && price.discount_pct > 0;
 
   return (
     <span className={className}>
-      ${display.toFixed(0)}
-      {price && price.discount_pct > 0 && (
-        <span className="ml-2 text-xs text-red-500 dark:text-red-400">
-          -{price.discount_pct.toFixed(0)}%
-        </span>
+      {hasDiscount && (
+        <span className="line-through text-ink-mute dark:text-paper/40 mr-2">${fallback}</span>
       )}
+      ${display.toFixed(0)}
     </span>
   );
 }

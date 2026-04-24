@@ -6,6 +6,7 @@ Entra ID with DefaultAzureCredential (no passwords).
 
 Schema (auto-created on startup):
   pricing_rules(sku TEXT PK, base_price NUMERIC, discount_pct NUMERIC, currency TEXT)
+  global_discounts(key TEXT PK, discount_pct NUMERIC)
 """
 from __future__ import annotations
 
@@ -105,6 +106,23 @@ async def _new_pool() -> asyncpg.Pool:
             )
             """
         )
+        await c.execute(
+            """
+            CREATE TABLE IF NOT EXISTS global_discounts (
+              key TEXT PRIMARY KEY DEFAULT 'default',
+              discount_pct NUMERIC(5,2) NOT NULL DEFAULT 0,
+              updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+            )
+            """
+        )
+        # Seed default row if missing
+        await c.execute(
+            """
+            INSERT INTO global_discounts (key, discount_pct)
+            VALUES ('default', 12)
+            ON CONFLICT (key) DO NOTHING
+            """
+        )
     return pool
 
 
@@ -142,13 +160,17 @@ async def readyz(pool: asyncpg.Pool = Depends(_pool)) -> dict[str, str]:
 async def quote(sku: str, pool: asyncpg.Pool = Depends(_pool)) -> PriceQuote:
     async with pool.acquire() as c:
         row = await c.fetchrow(
-            "SELECT sku, base_price, discount_pct, currency FROM pricing_rules WHERE sku = $1",
+            "SELECT sku, base_price, currency FROM pricing_rules WHERE sku = $1",
             sku,
         )
-    if row is None:
-        raise HTTPException(status_code=404, detail=f"no pricing rule for sku={sku}")
+        if row is None:
+            raise HTTPException(status_code=404, detail=f"no pricing rule for sku={sku}")
+        # Get global discount from the global_discounts table
+        global_disc = await c.fetchval(
+            "SELECT discount_pct FROM global_discounts WHERE key = 'default'"
+        )
     base = Decimal(row["base_price"])
-    disc = Decimal(row["discount_pct"])
+    disc = Decimal(global_disc) if global_disc is not None else Decimal("0")
     final = (base * (Decimal(100) - disc) / Decimal(100)).quantize(Decimal("0.01"))
     return PriceQuote(
         sku=row["sku"],
@@ -181,3 +203,33 @@ async def upsert(sku: str, rule: PricingRule, pool: asyncpg.Pool = Depends(_pool
         )
     log.info("pricing rule upserted", extra={"sku": sku})
     return rule
+
+
+class GlobalDiscount(BaseModel):
+    discount_pct: Decimal
+
+
+@app.get("/discount", response_model=GlobalDiscount)
+async def get_discount(pool: asyncpg.Pool = Depends(_pool)) -> GlobalDiscount:
+    async with pool.acquire() as c:
+        val = await c.fetchval(
+            "SELECT discount_pct FROM global_discounts WHERE key = 'default'"
+        )
+    return GlobalDiscount(discount_pct=Decimal(val) if val is not None else Decimal("0"))
+
+
+@app.put("/discount", response_model=GlobalDiscount)
+async def set_discount(body: GlobalDiscount, pool: asyncpg.Pool = Depends(_pool)) -> GlobalDiscount:
+    async with pool.acquire() as c:
+        await c.execute(
+            """
+            INSERT INTO global_discounts (key, discount_pct, updated_at)
+            VALUES ('default', $1, NOW())
+            ON CONFLICT (key) DO UPDATE SET
+              discount_pct = EXCLUDED.discount_pct,
+              updated_at = NOW()
+            """,
+            body.discount_pct,
+        )
+    log.info("global discount updated", extra={"discount_pct": str(body.discount_pct)})
+    return body

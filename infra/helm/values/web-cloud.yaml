@@ -44,3 +44,5 @@ ingress:
       pathType: Prefix
     - path: /api/price
       pathType: Prefix
+    - path: /api/discount
+      pathType: Prefix

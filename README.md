@@ -91,7 +91,14 @@ kubectl get ing -n vinex22 ingress-web -o jsonpath='{.status.loadBalancer.ingres
 ./scripts/chaos.sh act4   # planted code bug
 ./scripts/chaos.sh reset  # clean state
 
-# 6. Tear down
+# 6. Update global discount (live, no rebuild needed)
+curl -X PUT http://<INGRESS_IP>.nip.io/api/discount \
+  -H "Content-Type: application/json" \
+  -d '{"discount_pct": "12"}'
+# Read current discount
+curl http://<INGRESS_IP>.nip.io/api/discount
+
+# 7. Tear down
 ./scripts/down.sh         # terraform destroy + local state cleanup
 ```
 
