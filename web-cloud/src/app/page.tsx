@@ -44,10 +44,10 @@ const subClass: Record<Tile['bg'], string> = {
   'sand-soft': 'text-ink-soft',
 };
 const linkClass: Record<Tile['bg'], string> = {
-  paper: 'text-[#0066cc] hover:underline',
-  'paper-warm': 'text-[#0066cc] hover:underline',
-  ink: 'text-[#2997ff] hover:underline',
-  'sand-soft': 'text-[#0066cc] hover:underline',
+  paper: 'text-ink/70 hover:text-ink hover:underline',
+  'paper-warm': 'text-ink/70 hover:text-ink hover:underline',
+  ink: 'text-paper/70 hover:text-paper hover:underline',
+  'sand-soft': 'text-ink/70 hover:text-ink hover:underline',
 };
 
 function heightFor(isLg: boolean) {

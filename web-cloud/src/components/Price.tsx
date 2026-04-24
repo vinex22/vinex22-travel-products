@@ -45,7 +45,7 @@ export function Price({
   return (
     <span className={className}>
       {hasDiscount && (
-        <span className="line-through text-ink-mute dark:text-paper/40 mr-2">${fallback}</span>
+        <span className="line-through text-neutral-400 dark:text-neutral-500 mr-2">${fallback}</span>
       )}
       ${display.toFixed(0)}
     </span>

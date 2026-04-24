@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { categories } from '@/lib/catalog';
 import { ThemeToggle } from './ThemeToggle';
 import { BagButton } from './BagButton';
+import { NavLinks } from './NavLinks';
 
 // Apple-style global nav: 44px, translucent gray, icon-only utilities.
 export function Nav() {
@@ -15,23 +15,7 @@ export function Nav() {
         >
           vinex22
         </Link>
-        <ul className="hidden md:flex items-center gap-7 text-ink-soft dark:text-paper/80">
-          {categories.map((c) => (
-            <li key={c.slug}>
-              <Link
-                href={`/${c.slug}`}
-                className="opacity-80 hover:opacity-100 transition-opacity"
-              >
-                {c.name}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Link href="/story" className="opacity-80 hover:opacity-100 transition-opacity">
-              Story
-            </Link>
-          </li>
-        </ul>
+        <NavLinks />
         <div className="flex items-center gap-5 text-ink-soft dark:text-paper/80">
           <ThemeToggle />
           <button aria-label="Search" className="opacity-80 hover:opacity-100 transition-opacity">

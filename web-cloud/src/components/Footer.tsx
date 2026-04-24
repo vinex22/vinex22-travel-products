@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function Footer() {
   return (
     <footer className="border-t border-black/5 dark:border-white/5 mt-32">
@@ -9,7 +11,11 @@ export function Footer() {
         <div>
           <p className="font-semibold text-ink dark:text-paper mb-4">Shop</p>
           <ul className="space-y-2 text-xs">
-            <li>Carry</li><li>Rest</li><li>Pack</li><li>Care</li><li>Tech</li>
+            <li><Link href="/carry" className="hover:text-ink dark:hover:text-paper transition-colors">Carry</Link></li>
+            <li><Link href="/rest" className="hover:text-ink dark:hover:text-paper transition-colors">Rest</Link></li>
+            <li><Link href="/pack" className="hover:text-ink dark:hover:text-paper transition-colors">Pack</Link></li>
+            <li><Link href="/care" className="hover:text-ink dark:hover:text-paper transition-colors">Care</Link></li>
+            <li><Link href="/tech" className="hover:text-ink dark:hover:text-paper transition-colors">Tech</Link></li>
           </ul>
         </div>
         <div>
@@ -21,7 +27,8 @@ export function Footer() {
         <div>
           <p className="font-semibold text-ink dark:text-paper mb-4">Brand</p>
           <ul className="space-y-2 text-xs">
-            <li>Story</li><li>Materials</li><li>Sustainability</li><li>Press</li>
+            <li><Link href="/story" className="hover:text-ink dark:hover:text-paper transition-colors">Story</Link></li>
+            <li>Materials</li><li>Sustainability</li><li>Press</li>
           </ul>
         </div>
       </div>

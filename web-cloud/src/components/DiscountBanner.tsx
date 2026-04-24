@@ -19,7 +19,7 @@ export function DiscountBanner() {
   if (discount === null || discount <= 0) return null;
 
   return (
-    <div className="bg-[#0066cc] text-white text-center text-xs py-1.5 tracking-wide font-medium">
+    <div className="bg-[#0066cc] dark:bg-[#0a84ff] text-white text-center text-xs py-1.5 tracking-wide font-medium">
       {discount % 1 === 0 ? discount.toFixed(0) : discount.toFixed(1)}% off everything — applied at checkout
     </div>
   );

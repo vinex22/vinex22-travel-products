@@ -34,7 +34,7 @@ export default async function ProductPage({ params }: { params: Promise<{ catego
             </p>
             <h1 className="font-semibold tracking-[-0.025em] text-4xl md:text-5xl text-ink dark:text-paper">{p.name}</h1>
             <p className="mt-3 text-lg text-ink-soft dark:text-paper/75 font-light">{p.short}</p>
-            <Price sku={`${p.id}-${p.colors[0].slug}`} fallback={p.price} className="mt-8 text-2xl text-ink dark:text-paper font-medium" />
+            <Price sku={`${p.id}-${p.colors[0].slug}`} fallback={p.price} className="mt-8 text-2xl text-ink dark:text-paper font-medium block" />
             <AddToBag sku={`${p.id}-${p.colors[0].slug}`} name={p.name} price={p.price} image={p.image} href={`/${cat.slug}/${p.slug}`} />
             <p className="mt-3 text-xs text-ink-mute">Free shipping · Lifetime guarantee · Free repairs · Contact Elaine Yeung for replacements</p>
 

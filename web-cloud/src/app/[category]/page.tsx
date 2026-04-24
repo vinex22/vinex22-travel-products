@@ -21,7 +21,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         className="parallax relative h-[70vh] flex items-end"
         style={{ backgroundImage: `url('${imageUrl(cat.hero)}')` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/70" />
         <div className="relative mx-auto max-w-7xl px-6 pb-20 text-white animate-fade-up">
           <p className="eyebrow text-white/80 mb-3">vinex22 · {cat.name}</p>
           <h1 className="headline text-6xl md:text-8xl">{cat.name}</h1>
