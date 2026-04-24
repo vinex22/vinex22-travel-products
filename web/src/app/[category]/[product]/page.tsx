@@ -1,4 +1,5 @@
 import { categories, getCategory, getProduct, getProductsByCategory } from '@/lib/catalog';
+import { imageUrl } from '@/lib/imageUrl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -22,7 +23,7 @@ export default async function ProductPage({ params }: { params: Promise<{ catego
       <section className="bg-paper-warm dark:bg-neutral-950 pt-12 pb-24">
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-12 items-start">
           <div className="relative aspect-square rounded-2xl overflow-hidden">
-            <Image src={p.image} alt={p.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" priority />
+            <Image src={imageUrl(p.image)} alt={p.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" priority />
           </div>
           <div className="md:sticky md:top-24">
             <p className="eyebrow text-ink-mute mb-3">
@@ -62,7 +63,7 @@ export default async function ProductPage({ params }: { params: Promise<{ catego
               {related.map((r) => (
                 <Link key={r.id} href={`/${cat.slug}/${r.slug}`} className="group">
                   <div className="relative aspect-square overflow-hidden rounded-xl bg-paper-warm dark:bg-neutral-900">
-                    <Image src={r.image} alt={r.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 33vw"/>
+                    <Image src={imageUrl(r.image)} alt={r.name} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 50vw, 33vw"/>
                   </div>
                   <p className="mt-3 text-sm font-medium text-ink dark:text-paper">{r.name}</p>
                   <p className="text-xs text-ink-mute">${r.price}</p>

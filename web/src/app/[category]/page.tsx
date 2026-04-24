@@ -1,4 +1,5 @@
 import { categories, getCategory, getProductsByCategory } from '@/lib/catalog';
+import { imageUrl } from '@/lib/imageUrl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -17,7 +18,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     <>
       <section
         className="parallax relative h-[70vh] flex items-end"
-        style={{ backgroundImage: `url('${cat.hero}')` }}
+        style={{ backgroundImage: `url('${imageUrl(cat.hero)}')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60" />
         <div className="relative mx-auto max-w-7xl px-6 pb-20 text-white animate-fade-up">
@@ -35,7 +36,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               <Link key={p.id} href={`/${cat.slug}/${p.slug}`} className="group">
                 <div className="relative aspect-square overflow-hidden rounded-xl bg-paper-warm dark:bg-neutral-900">
                   <Image
-                    src={p.image}
+                    src={imageUrl(p.image)}
                     alt={p.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"

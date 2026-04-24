@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { categories, products } from '@/lib/catalog';
+import { imageUrl } from '@/lib/imageUrl';
 
 export default function Home() {
   const featured = [
@@ -15,7 +16,7 @@ export default function Home() {
       {/* HERO — parallax mountains backdrop */}
       <section
         className="parallax relative h-[100vh] flex items-end"
-        style={{ backgroundImage: "url('/images/backdrop-wide/backdrop-hero-mountains.png')" }}
+        style={{ backgroundImage: `url('${imageUrl('/images/backdrop-wide/backdrop-hero-mountains.png')}')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
         <div className="relative mx-auto max-w-7xl px-6 pb-24 text-white animate-fade-up">
@@ -50,7 +51,7 @@ export default function Home() {
           </div>
           <div className="relative aspect-square">
             <Image
-              src="/images/hero/hero-carry.png"
+              src={imageUrl('/images/hero/hero-carry.png')}
               alt="Atlas Carry-On"
               fill
               className="object-cover rounded-2xl"
@@ -63,7 +64,7 @@ export default function Home() {
       {/* PARALLAX 2 — runway */}
       <section
         className="parallax h-[70vh] flex items-center justify-center"
-        style={{ backgroundImage: "url('/images/backdrop-wide/backdrop-hero-runway.png')" }}
+        style={{ backgroundImage: `url('${imageUrl('/images/backdrop-wide/backdrop-hero-runway.png')}')` }}
       >
         <div className="text-center text-white px-6">
           <p className="eyebrow text-white/80">Field-tested</p>
@@ -84,7 +85,7 @@ export default function Home() {
                 className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-black"
               >
                 <Image
-                  src={cat.cover}
+                  src={imageUrl(cat.cover)}
                   alt={cat.name}
                   fill
                   className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
@@ -105,7 +106,7 @@ export default function Home() {
       {/* PARALLAX 3 — sky */}
       <section
         className="parallax h-[60vh] flex items-center"
-        style={{ backgroundImage: "url('/images/backdrop-wide/backdrop-section-sky.png')" }}
+        style={{ backgroundImage: `url('${imageUrl('/images/backdrop-wide/backdrop-section-sky.png')}')` }}
       >
         <div className="mx-auto max-w-7xl px-6 text-white">
           <h2 className="headline text-4xl md:text-6xl max-w-2xl">Sleep where you land.</h2>
@@ -129,7 +130,7 @@ export default function Home() {
               <Link key={p.id} href={`/${p.category}/${p.slug}`} className="group">
                 <div className="relative aspect-square overflow-hidden rounded-xl bg-paper-warm dark:bg-neutral-900">
                   <Image
-                    src={p.image}
+                    src={imageUrl(p.image)}
                     alt={p.name}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -149,7 +150,7 @@ export default function Home() {
       {/* PARALLAX 4 — coast */}
       <section
         className="parallax h-[80vh] flex items-end"
-        style={{ backgroundImage: "url('/images/backdrop-wide/backdrop-hero-coast.png')" }}
+        style={{ backgroundImage: `url('${imageUrl('/images/backdrop-wide/backdrop-hero-coast.png')}')` }}
       >
         <div className="mx-auto max-w-7xl px-6 pb-20 text-white">
           <p className="eyebrow text-white/80 mb-3">Campaign · Coastal</p>
@@ -161,7 +162,7 @@ export default function Home() {
       <section className="bg-paper dark:bg-black py-32">
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/5]">
-            <Image src="/images/campaign/campaign-quiet-cabin.png" alt="Quiet cabin" fill className="object-cover rounded-2xl" sizes="(max-width: 768px) 100vw, 50vw"/>
+            <Image src={imageUrl('/images/campaign/campaign-quiet-cabin.png')} alt="Quiet cabin" fill className="object-cover rounded-2xl" sizes="(max-width: 768px) 100vw, 50vw"/>
           </div>
           <div>
             <p className="eyebrow text-sienna mb-4">Campaign · Cabin Series</p>
@@ -185,7 +186,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {['/images/texture/texture-aluminum.png', '/images/texture/texture-canvas.png'].map((src) => (
               <div key={src} className="relative aspect-[16/9] rounded-xl overflow-hidden">
-                <Image src={src} alt="material" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw"/>
+                <Image src={imageUrl(src)} alt="material" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw"/>
               </div>
             ))}
           </div>
@@ -195,7 +196,7 @@ export default function Home() {
       {/* FOOTER PARALLAX — stars */}
       <section
         className="parallax h-[80vh] flex items-center justify-center"
-        style={{ backgroundImage: "url('/images/backdrop-wide/backdrop-footer-stars.png')" }}
+        style={{ backgroundImage: `url('${imageUrl('/images/backdrop-wide/backdrop-footer-stars.png')}')` }}
       >
         <div className="text-center text-white px-6">
           <p className="eyebrow text-white/70 mb-4">vinex22</p>
