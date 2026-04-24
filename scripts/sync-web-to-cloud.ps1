@@ -30,6 +30,7 @@ $cloudOnly = @(
     'package.json',                          # different name + deps (@azure/*)
     'package-lock.json',
     'README.md',
+    'public\.gitkeep',                       # marker so empty public/ stays in git
     'public\images'                          # cloud uses storage, not bundled
 )
 
@@ -54,10 +55,15 @@ foreach ($rel in $cloudOnly) {
 }
 $xdArgs = @()
 foreach ($rel in $cloudOnly) {
-    $abs = Join-Path $dst $rel
-    if (Test-Path $abs -PathType Container) {
+    # Add as a directory exclusion if either the dst path is a folder OR the
+    # SOURCE path is a folder (cloud variant may have deleted its copy already,
+    # but we still must not mirror the source folder over).
+    $absDst = Join-Path $dst $rel
+    $absSrc = Join-Path $src $rel
+    if ((Test-Path $absDst -PathType Container) -or (Test-Path $absSrc -PathType Container)) {
         $xdArgs += '/XD'
-        $xdArgs += $abs
+        $xdArgs += $absDst
+        $xdArgs += $absSrc
     }
 }
 # Always exclude build artifacts and deps from mirroring.
