@@ -1,0 +1,198 @@
+# =============================================================================
+# vinex22-travels — local docker-compose stack
+#
+# Runs all 12 services on your laptop pointing at the SAME Azure backends
+# (Postgres / Redis / Service Bus / Storage / Key Vault) used by the AKS
+# deployment. No AKS, no kubelet image cache, fast inner loop.
+#
+# AUTH: Services that use Azure SDK pick up AZURE_TENANT_ID/CLIENT_ID/
+# CLIENT_SECRET via DefaultAzureCredential -> EnvironmentCredential. The
+# Service Principal is provisioned by scripts/local-up.sh.
+#
+# USAGE:
+#   bash scripts/local-up.sh
+#   bash scripts/local-down.sh
+#   docker compose -f docker-compose.local.yml --env-file .env.local logs -f pricing-service
+# =============================================================================
+
+name: vinex22-local
+
+# YAML anchors merged into per-service `environment:` blocks.
+x-azure-sp-env: &azure-sp-env
+  AZURE_TENANT_ID: ${AZURE_TENANT_ID}
+  AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
+  AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
+
+x-otel-env: &otel-env
+  # Local mode: no OTLP collector. Empty value disables tracing init in services.
+  OTEL_EXPORTER_OTLP_ENDPOINT: ""
+
+services:
+
+  # ---------- Stateless / no Azure dependency --------------------------------
+  feature-flags:
+    build:
+      context: ./services/feature-flags
+    image: vinex22-local/feature-flags:dev
+    environment:
+      <<: *otel-env
+      FEATURE_FLAGS: '{"checkoutCrashOnStart":false,"recommendationLatencyMs":0,"cartReadOnly":false}'
+    ports: ["8091:8080"]
+
+  payment-service:
+    build:
+      context: ./services/payment-service
+    image: vinex22-local/payment-service:dev
+    environment:
+      <<: *otel-env
+      ASPNETCORE_URLS: http://+:8080
+    ports: ["8088:8080"]
+
+  catalog-service:
+    build:
+      context: .
+      dockerfile: services/catalog-service/Dockerfile
+    image: vinex22-local/catalog-service:dev
+    environment:
+      <<: *otel-env
+      PRICING_BASE: http://pricing-service:8080
+    ports: ["8082:8080"]
+    depends_on:
+      - pricing-service
+
+  recommendation-service:
+    build:
+      context: ./services/recommendation-service
+    image: vinex22-local/recommendation-service:dev
+    environment:
+      <<: *otel-env
+      CATALOG_BASE: http://catalog-service:8080
+    ports: ["8086:8080"]
+    depends_on:
+      - catalog-service
+
+  notification-service:
+    build:
+      context: ./services/notification-service
+    image: vinex22-local/notification-service:dev
+    environment:
+      <<: *otel-env
+      READY_DELAY_MS: "0"
+    ports: ["8087:8080"]
+
+  # ---------- Azure-backed (DefaultAzureCredential via SP env vars) ----------
+  pricing-service:
+    build:
+      context: ./services/pricing-service
+    image: vinex22-local/pricing-service:dev
+    environment:
+      <<: [*otel-env, *azure-sp-env]
+      PGHOST: ${AZ_PG_FQDN}
+      PGPORT: "5432"
+      PGUSER: ${SP_PG_PRINCIPAL}
+      PGDATABASE: pricing
+    ports: ["8081:8080"]
+
+  cart-service:
+    build:
+      context: ./services/cart-service
+    image: vinex22-local/cart-service:dev
+    environment:
+      <<: *otel-env
+      REDIS_ADDR: ${AZ_REDIS_HOST}:${AZ_REDIS_PORT}
+      REDIS_PASSWORD: ${REDIS_PRIMARY_KEY}
+      REDIS_TLS: "true"
+    ports: ["8083:8080"]
+
+  checkout-service:
+    build:
+      context: ./services/checkout-service
+    image: vinex22-local/checkout-service:dev
+    environment:
+      <<: [*otel-env, *azure-sp-env]
+      ASPNETCORE_URLS: http://+:8080
+      PGHOST: ${AZ_PG_FQDN}
+      PGPORT: "5432"
+      PGUSER: ${SP_PG_PRINCIPAL}
+      PGDATABASE: orders
+      SERVICEBUS_FQDN: ${AZ_SB_NS}.servicebus.windows.net
+      SERVICEBUS_TOPIC: ${AZ_SB_TOPIC}
+      PAYMENT_BASE: http://payment-service:8080
+      FLAGS_BASE: http://feature-flags:8080
+    ports: ["8084:8080"]
+    depends_on:
+      - payment-service
+      - feature-flags
+
+  inventory-service:
+    build:
+      context: ./services/inventory-service
+    image: vinex22-local/inventory-service:dev
+    environment:
+      <<: [*otel-env, *azure-sp-env]
+      PGHOST: ${AZ_PG_FQDN}
+      PGPORT: "5432"
+      PGUSER: ${SP_PG_PRINCIPAL}
+      PGDATABASE: inventory
+      SERVICEBUS_FQDN: ${AZ_SB_NS}.servicebus.windows.net
+      SERVICEBUS_TOPIC: ${AZ_SB_TOPIC}
+      SERVICEBUS_SUBSCRIPTION: inventory
+    ports: ["8085:8080"]
+
+  # ---------- Edge / UI ------------------------------------------------------
+  api-gateway:
+    build:
+      context: ./services/api-gateway
+    image: vinex22-local/api-gateway:dev
+    environment:
+      <<: *otel-env
+      CATALOG_BASE: http://catalog-service:8080
+      PRICING_BASE: http://pricing-service:8080
+      CART_BASE: http://cart-service:8080
+      CHECKOUT_BASE: http://checkout-service:8080
+      INVENTORY_BASE: http://inventory-service:8080
+      RECOMMENDATION_BASE: http://recommendation-service:8080
+      NOTIFICATION_BASE: http://notification-service:8080
+      FLAGS_BASE: http://feature-flags:8080
+    ports: ["8080:8080"]
+    depends_on:
+      - catalog-service
+      - pricing-service
+      - cart-service
+      - checkout-service
+      - inventory-service
+      - recommendation-service
+      - notification-service
+      - feature-flags
+
+  web-cloud:
+    build:
+      context: .
+      dockerfile: web-cloud/Dockerfile
+    image: vinex22-local/web-cloud:dev
+    environment:
+      <<: [*otel-env, *azure-sp-env]
+      NODE_ENV: production
+      NEXT_PUBLIC_IMAGE_BASE: /api/image
+      NEXT_PUBLIC_API_BASE: http://localhost:8080
+      AZURE_STORAGE_ACCOUNT: ${AZ_STORAGE}
+      AZURE_STORAGE_CONTAINER: ${AZ_STORAGE_CONTAINER}
+      API_BASE_INTERNAL: http://api-gateway:8080
+    ports: ["3001:3000"]
+    depends_on:
+      - api-gateway
+
+  loadgen:
+    build:
+      context: ./services/loadgen
+    image: vinex22-local/loadgen:dev
+    environment:
+      <<: *otel-env
+      TARGET_HOST: http://api-gateway:8080
+    command:
+      - "--host=http://api-gateway:8080"
+      - "--web-host=0.0.0.0"
+      - "--web-port=8089"
+    ports: ["8089:8089"]
+    depends_on:
+      - api-gateway

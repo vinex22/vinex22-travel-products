@@ -95,6 +95,18 @@ def main() -> int:
         default=5,
         help="Concurrent generation workers (default 5; lower if you hit rate limits)",
     )
+    parser.add_argument(
+        "--max-retries",
+        type=int,
+        default=3,
+        help="Retry attempts on transient errors (500 / timeout / 429). Default 3.",
+    )
+    parser.add_argument(
+        "--retry-backoff",
+        type=float,
+        default=10.0,
+        help="Base seconds for exponential backoff between retries (default 10).",
+    )
     args = parser.parse_args()
 
     catalog = load_catalog()
@@ -129,7 +141,10 @@ def main() -> int:
     failed: list[tuple[str, str]] = []
     lock = threading.Lock()
     total = len(images)
-    counter = {"done": 0}
+    counter = {"done": 0, "started": 0, "in_flight": 0}
+
+    def _ts() -> str:
+        return time.strftime("%H:%M:%S")
 
     def work(idx: int, img: dict) -> None:
         image_id = img["id"]
@@ -142,34 +157,73 @@ def main() -> int:
             with lock:
                 counter["done"] += 1
                 skipped.append(image_id)
-                print(f"[{counter['done']:>2}/{total}] {image_id} ({size}) -> SKIP (exists)", flush=True)
-            return
-
-        try:
-            t0 = time.monotonic()
-            generate_one(
-                client=client,
-                image_id=image_id,
-                bucket=bucket,
-                prompt=img["prompt"],
-                size=size,
-                style_preamble=style_preamble,
-                branding_suffix=branding_suffix,
-            )
-            dt = time.monotonic() - t0
-            with lock:
-                counter["done"] += 1
-                succeeded.append(image_id)
                 print(
-                    f"[{counter['done']:>2}/{total}] {image_id} ({size}) -> OK ({dt:.1f}s)",
+                    f"[{_ts()}] [{counter['done']:>3}/{total}] SKIP   {image_id} ({size}) (exists)",
                     flush=True,
                 )
-        except Exception as e:  # noqa: BLE001
-            msg = f"{type(e).__name__}: {e}"
-            with lock:
-                counter["done"] += 1
+            return
+
+        with lock:
+            counter["started"] += 1
+            counter["in_flight"] += 1
+            print(
+                f"[{_ts()}] [{counter['started']:>3}/{total}] START  {image_id} ({size})  in_flight={counter['in_flight']}",
+                flush=True,
+            )
+
+        last_err = None
+        t0 = time.monotonic()
+        for attempt in range(1, args.max_retries + 1):
+            try:
+                generate_one(
+                    client=client,
+                    image_id=image_id,
+                    bucket=bucket,
+                    prompt=img["prompt"],
+                    size=size,
+                    style_preamble=style_preamble,
+                    branding_suffix=branding_suffix,
+                )
+                last_err = None
+                break
+            except Exception as e:  # noqa: BLE001
+                last_err = e
+                etype = type(e).__name__
+                # Only retry transient classes
+                transient = (
+                    "InternalServerError",
+                    "APITimeoutError",
+                    "APIConnectionError",
+                    "RateLimitError",
+                )
+                if etype not in transient or attempt == args.max_retries:
+                    break
+                backoff = args.retry_backoff * (2 ** (attempt - 1))
+                with lock:
+                    print(
+                        f"[{_ts()}]              RETRY  {image_id} attempt {attempt}/{args.max_retries} after {backoff:.0f}s ({etype})",
+                        flush=True,
+                    )
+                time.sleep(backoff)
+
+        dt = time.monotonic() - t0
+        with lock:
+            counter["in_flight"] -= 1
+            counter["done"] += 1
+            if last_err is None:
+                succeeded.append(image_id)
+                print(
+                    f"[{_ts()}] [{counter['done']:>3}/{total}] OK     {image_id} ({size}) ({dt:.1f}s)  in_flight={counter['in_flight']}",
+                    flush=True,
+                )
+            else:
+                msg = f"{type(last_err).__name__}: {last_err}"
                 failed.append((image_id, msg))
-                print(f"[{counter['done']:>2}/{total}] {image_id} ({size}) -> FAIL {msg}", file=sys.stderr, flush=True)
+                print(
+                    f"[{_ts()}] [{counter['done']:>3}/{total}] FAIL   {image_id} ({size}) ({dt:.1f}s) {msg}",
+                    file=sys.stderr,
+                    flush=True,
+                )
 
     t_start = time.monotonic()
     with ThreadPoolExecutor(max_workers=args.workers) as pool:

@@ -33,6 +33,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "../data/*.json",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],

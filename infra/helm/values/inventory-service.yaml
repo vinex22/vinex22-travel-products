@@ -1,0 +1,18 @@
+# inventory-service — Go; reads inventory DB; subscribes to SB topic.
+nameOverride: inventory-service
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 2
+serviceAccount:
+  create: true
+  name: inventory-sa
+  workloadIdentity:
+    enabled: true
+    clientId: ""    # injected
+env:
+  PGHOST:      ""
+  PGPORT:      "5432"
+  PGUSER:      ""
+  PGDATABASE:  inventory
+  SERVICEBUS_FQDN:         ""
+  SERVICEBUS_TOPIC:        orders
+  SERVICEBUS_SUBSCRIPTION: inventory

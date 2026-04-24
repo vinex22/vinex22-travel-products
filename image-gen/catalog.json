@@ -4,15 +4,20 @@
     "style": "Apple.com inspired premium D2C travel-essentials brand. Photorealistic, cinematic editorial photography, magazine-cover quality. Minimalist composition with generous negative space, soft natural light, shallow depth of field, subtle film grain. Neutral palette: warm whites, charcoal, deep navy, sand, burnt sienna accents. Premium materials: brushed aluminum, waxed canvas, full-grain leather, merino wool, ripstop nylon. No people in product shots; lifestyle shots may include people but faces should be away from camera, in shadow, or out of focus. Avoid stock-photo look \u2014 always editorial, always considered.",
     "branding_clause": "BRANDING: include a small, discreet 'vinex22' wordmark on the product, rendered in clean lowercase sans-serif typography (Inter or Helvetica style). The wordmark must be small (no larger than 5% of the frame), positioned subtly \u2014 debossed into leather patches, etched into brushed aluminum, embroidered on canvas/nylon, or printed on a small woven label or zipper pull. Never bold, never centered, never a hero element. Spell exactly: vinex22 (lowercase, no spaces, no hyphen). No other text, no other logos, no other brand marks. The wordmark is the only text allowed in the image.",
     "no_branding_clause": "No text of any kind, no typography, no logos, no watermarks, no brand marks anywhere in the image.",
-    "branded_buckets": ["product", "category"]
+    "branded_buckets": [
+      "category",
+      "product",
+      "product-color",
+      "product-lineup"
+    ]
   },
   "buckets": {
     "hero": {
-      "size": "1792x1024",
+      "size": "1536x1024",
       "purpose": "Full-bleed homepage and category landing heroes"
     },
     "category": {
-      "size": "1792x1024",
+      "size": "1536x1024",
       "purpose": "Category page covers"
     },
     "product": {
@@ -20,7 +25,7 @@
       "purpose": "Product card images on neutral seamless backdrop"
     },
     "lifestyle": {
-      "size": "1792x1024",
+      "size": "1536x1024",
       "purpose": "Editorial lifestyle moments"
     },
     "texture": {
@@ -28,16 +33,24 @@
       "purpose": "Material and detail close-ups for storytelling sections"
     },
     "campaign": {
-      "size": "1792x1024",
+      "size": "1536x1024",
       "purpose": "Editorial campaign hero scenes for the homepage and brand-story sections"
     },
     "backdrop-wide": {
-      "size": "1792x1024",
+      "size": "1536x1024",
       "purpose": "Landscape parallax backdrops for hero, section dividers, and footer"
     },
     "backdrop-tall": {
-      "size": "1024x1792",
+      "size": "1024x1536",
       "purpose": "Portrait parallax backdrops for stacked sections and editorial column blocks"
+    },
+    "product-color": {
+      "size": "1024x1024",
+      "purpose": "Per-color product variants for the color picker on PDP"
+    },
+    "product-lineup": {
+      "size": "1536x1024",
+      "purpose": "All-color lineup hero shot per product, Apple gallery style"
     }
   },
   "images": [
@@ -91,7 +104,6 @@
       "bucket": "category",
       "prompt": "A clean lineup of travel tech accessories on charcoal slate: a brushed-aluminum power bank, a universal travel adapter, a navy cable organizer roll, and a small leather AirTag holder. Soft directional lighting. Apple-style product hero. No people, no text, no logos."
     },
-
     {
       "id": "product-carry-01",
       "bucket": "product",
@@ -100,60 +112,58 @@
     {
       "id": "product-carry-02",
       "bucket": "product",
-      "prompt": "Deep-navy soft-shell weekender duffel bag with leather handles and brass YKK zippers. Three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal large hard-shell aluminum-frame check-in suitcase, four spinner wheels, telescoping handle retracted, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-carry-03",
       "bucket": "product",
-      "prompt": "Warm sand-colored hard-shell check-in suitcase, large size, four spinner wheels, recessed combination lock. Three-quarter front view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal waxed-canvas weekender duffel bag with leather handles and brass YKK zippers, 45 liter capacity. Three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-carry-04",
       "bucket": "product",
-      "prompt": "Black ballistic-nylon laptop backpack with padded straps and a clean minimalist silhouette. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal structured full-grain leather day-tote bag with reinforced base and slim leather shoulder straps, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-carry-05",
       "bucket": "product",
-      "prompt": "Olive waxed-canvas messenger bag with leather flap and brass buckles. Three-quarter front view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal minimalist roll-top commuter backpack in technical fabric with leather details, 18 liter capacity, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-carry-06",
       "bucket": "product",
-      "prompt": "Cream-colored leather garment bag, folded and presented at a three-quarter angle. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal slim leather briefcase with brass clasps and structured silhouette, sized for a 16-inch laptop, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
-
     {
       "id": "product-rest-01",
       "bucket": "product",
-      "prompt": "Memory-foam U-shaped neck pillow in soft cream cashmere fabric. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white Mongolian cashmere travel throw blanket, neatly folded into a square stack. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-rest-02",
       "bucket": "product",
-      "prompt": "Charcoal silk sleep mask with elastic strap, lying flat. Top-down view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white memory-foam U-shaped neck pillow with merino knit fabric cover, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-rest-03",
       "bucket": "product",
-      "prompt": "Folded merino-wool travel blanket in deep navy, neatly folded into a square. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white contoured mulberry silk sleep eye mask with adjustable strap, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-rest-04",
       "bucket": "product",
-      "prompt": "Inflatable footrest hammock in matte black ripstop nylon, partially inflated, presented at three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white compressible suede travel slipper, single shoe at three-quarter angle. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-rest-05",
       "bucket": "product",
-      "prompt": "Compact noise-isolating foam earplugs in a small cream linen pouch beside them. Top-down view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white Loro Piana wool-blend hooded pullover, neatly folded square showing knit texture. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-rest-06",
       "bucket": "product",
-      "prompt": "Wide-band airline compression socks in heather grey, folded into a neat pair. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white small cylindrical brass pill case containing reusable silicone earplugs, lid open beside it. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
-
     {
       "id": "product-pack-01",
       "bucket": "product",
@@ -162,29 +172,28 @@
     {
       "id": "product-pack-02",
       "bucket": "product",
-      "prompt": "A vacuum-style compression packing bag, half-rolled, in matte sand-colored fabric. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal flat ripstop-nylon garment folio with snap closures, lying closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-pack-03",
       "bucket": "product",
-      "prompt": "A shoe pouch in deep-navy waterproof fabric, zipped closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal pair of felt-lined ripstop-nylon shoe sleeves, stacked. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-pack-04",
       "bucket": "product",
-      "prompt": "A laundry pouch in burnt-sienna waxed canvas with a drawstring top. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal full-grain leather travel document wallet with RFID-blocking lining, closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-pack-05",
       "bucket": "product",
-      "prompt": "A folder-style garment organizer in matte charcoal nylon, closed flat. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal drawstring antibacterial mesh laundry pouch, slightly cinched. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-pack-06",
       "bucket": "product",
-      "prompt": "A small flat tech pouch in deep navy with a clean zipper, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Deep matte graphite charcoal rolled suede jewelry roll with brass snap closures, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
-
     {
       "id": "product-care-01",
       "bucket": "product",
@@ -193,33 +202,32 @@
     {
       "id": "product-care-02",
       "bucket": "product",
-      "prompt": "A small leak-proof silicone travel bottle set, three bottles in cream, sand, and charcoal colors, arranged in a row. Top-down view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white compact rectangular waxed canvas toiletry pouch with brass YKK zipper, cabin-size, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-care-03",
       "bucket": "product",
-      "prompt": "A compact bamboo travel toothbrush in a slim cream linen sleeve. Top-down view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white set of four refillable food-grade silicone travel bottles with brushed aluminum caps, arranged in a tight row. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-care-04",
       "bucket": "product",
-      "prompt": "A wet-dry pouch in deep navy waterproof fabric, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white vegetable-tanned leather sleeve case for a metal safety razor, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-care-05",
       "bucket": "product",
-      "prompt": "A zippered jewelry travel roll in cream leather, partially unrolled to show small compartments. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white small 5ml brass refillable fragrance atomizer bottle, vertical. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-care-06",
       "bucket": "product",
-      "prompt": "A grooming kit in a slim charcoal canvas zip case, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Soft cream off-white neatly folded stonewashed linen hand towel, square fold. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
-
     {
       "id": "product-tech-01",
       "bucket": "product",
-      "prompt": "A slim brushed-aluminum 10000mAh power bank with a single USB-C port. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Matte black rolled-up cable organizer roll with elastic loops, partially unfurled, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-tech-02",
@@ -229,24 +237,23 @@
     {
       "id": "product-tech-03",
       "bucket": "product",
-      "prompt": "A roll-up cable organizer in deep-navy waxed canvas, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Matte black compact 4-port GaN charger brick with USB-C ports visible on one side, 100W travel charger, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-tech-04",
       "bucket": "product",
-      "prompt": "A pair of premium wireless noise-cancelling earbuds in a matte charcoal charging case, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Matte black hard-shell felt-lined case for over-ear headphones, oval form, zippered, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-tech-05",
       "bucket": "product",
-      "prompt": "A small leather card-and-passport wallet with an integrated tracker pocket, in warm cognac leather. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Matte black slim laptop and tablet folio sleeve, sized for a 13-inch laptop, lying flat closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
     {
       "id": "product-tech-06",
       "bucket": "product",
-      "prompt": "A compact e-ink reading sleeve in a charcoal felt case, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+      "prompt": "Matte black rectangular slim 20000mAh power bank with brushed-aluminum shell, single USB-C port visible at one end, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
     },
-
     {
       "id": "lifestyle-airport-01",
       "bucket": "lifestyle",
@@ -287,7 +294,6 @@
       "bucket": "lifestyle",
       "prompt": "A sand-colored hard-shell suitcase standing on a wooden boardwalk over a beach at golden hour, ocean waves softly visible in background. Warm side light, long shadow. Cinematic editorial composition with negative space. No people, no text, no logos."
     },
-
     {
       "id": "texture-canvas",
       "bucket": "texture",
@@ -382,6 +388,757 @@
       "id": "backdrop-campaign-snow",
       "bucket": "backdrop-tall",
       "prompt": "Cinematic vertical landscape of a lone figure (shot from behind, very small in frame) walking along a wind-swept snowy ridge under heavy overcast sky. Near-monochrome palette of soft greys and whites, painterly, contemplative, awe-inspiring. Tall portrait aspect. Face not visible, no text, no logos."
+    },
+    {
+      "id": "product-carry-01-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal hard-shell aluminum-frame carry-on suitcase, four spinner wheels, telescoping handle extended halfway, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-01-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum hard-shell aluminum-frame carry-on suitcase, four spinner wheels, telescoping handle extended halfway, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-01-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige hard-shell aluminum-frame carry-on suitcase, four spinner wheels, telescoping handle extended halfway, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-01-midnight",
+      "bucket": "product-color",
+      "prompt": "A single deep midnight navy blue hard-shell aluminum-frame carry-on suitcase, four spinner wheels, telescoping handle extended halfway, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-01-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical hard-shell aluminum-frame carry-on suitcase, four spinner wheels, telescoping handle extended halfway, three-quarter front view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a polished brushed silver aluminum, then a warm sand-beige, then a deep midnight navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-02-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal large hard-shell aluminum-frame check-in suitcase, four spinner wheels, telescoping handle retracted, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-02-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum large hard-shell aluminum-frame check-in suitcase, four spinner wheels, telescoping handle retracted, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-02-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige large hard-shell aluminum-frame check-in suitcase, four spinner wheels, telescoping handle retracted, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-02-midnight",
+      "bucket": "product-color",
+      "prompt": "A single deep midnight navy blue large hard-shell aluminum-frame check-in suitcase, four spinner wheels, telescoping handle retracted, three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-02-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical large hard-shell aluminum-frame check-in suitcase, four spinner wheels, telescoping handle retracted, three-quarter front view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a polished brushed silver aluminum, then a warm sand-beige, then a deep midnight navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-03-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal waxed-canvas weekender duffel bag with leather handles and brass hardware, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-03-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum waxed-canvas weekender duffel bag with leather handles and brass hardware, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-03-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige waxed-canvas weekender duffel bag with leather handles and brass hardware, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-03-midnight",
+      "bucket": "product-color",
+      "prompt": "A single deep midnight navy blue waxed-canvas weekender duffel bag with leather handles and brass hardware, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-03-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical waxed-canvas weekender duffel bag with leather handles and brass hardware, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a polished brushed silver aluminum, then a warm sand-beige, then a deep midnight navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-04-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal structured leather day-tote bag with reinforced base and slim shoulder straps, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-04-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum structured leather day-tote bag with reinforced base and slim shoulder straps, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-04-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige structured leather day-tote bag with reinforced base and slim shoulder straps, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-04-midnight",
+      "bucket": "product-color",
+      "prompt": "A single deep midnight navy blue structured leather day-tote bag with reinforced base and slim shoulder straps, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-04-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical structured leather day-tote bag with reinforced base and slim shoulder straps, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a polished brushed silver aluminum, then a warm sand-beige, then a deep midnight navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-05-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal minimalist roll-top backpack in technical fabric with leather details, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-05-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum minimalist roll-top backpack in technical fabric with leather details, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-05-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige minimalist roll-top backpack in technical fabric with leather details, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-05-midnight",
+      "bucket": "product-color",
+      "prompt": "A single deep midnight navy blue minimalist roll-top backpack in technical fabric with leather details, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-05-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical minimalist roll-top backpack in technical fabric with leather details, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a polished brushed silver aluminum, then a warm sand-beige, then a deep midnight navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-06-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal slim leather briefcase with brass clasps and structured silhouette, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-06-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum slim leather briefcase with brass clasps and structured silhouette, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-06-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige slim leather briefcase with brass clasps and structured silhouette, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-06-midnight",
+      "bucket": "product-color",
+      "prompt": "A single deep midnight navy blue slim leather briefcase with brass clasps and structured silhouette, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-06-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical slim leather briefcase with brass clasps and structured silhouette, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a polished brushed silver aluminum, then a warm sand-beige, then a deep midnight navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-01-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white soft cashmere travel throw blanket, neatly folded into a square stack. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-01-charcoal",
+      "bucket": "product-color",
+      "prompt": "A single dark charcoal grey soft cashmere travel throw blanket, neatly folded into a square stack. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-01-oat",
+      "bucket": "product-color",
+      "prompt": "A single natural oat-beige soft cashmere travel throw blanket, neatly folded into a square stack. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-01-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue soft cashmere travel throw blanket, neatly folded into a square stack. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-01-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical soft cashmere travel throw blanket, neatly folded into a square stack, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a dark charcoal grey, then a natural oat-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-02-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white memory-foam U-shaped neck pillow with knit fabric cover, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-02-charcoal",
+      "bucket": "product-color",
+      "prompt": "A single dark charcoal grey memory-foam U-shaped neck pillow with knit fabric cover, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-02-oat",
+      "bucket": "product-color",
+      "prompt": "A single natural oat-beige memory-foam U-shaped neck pillow with knit fabric cover, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-02-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue memory-foam U-shaped neck pillow with knit fabric cover, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-02-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical memory-foam U-shaped neck pillow with knit fabric cover, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a dark charcoal grey, then a natural oat-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-03-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white contoured silk sleep eye mask with adjustable strap, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-03-charcoal",
+      "bucket": "product-color",
+      "prompt": "A single dark charcoal grey contoured silk sleep eye mask with adjustable strap, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-03-oat",
+      "bucket": "product-color",
+      "prompt": "A single natural oat-beige contoured silk sleep eye mask with adjustable strap, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-03-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue contoured silk sleep eye mask with adjustable strap, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-03-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical contoured silk sleep eye mask with adjustable strap, lying flat, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a dark charcoal grey, then a natural oat-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-04-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white compressible suede travel slipper, single shoe at three-quarter angle. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-04-charcoal",
+      "bucket": "product-color",
+      "prompt": "A single dark charcoal grey compressible suede travel slipper, single shoe at three-quarter angle. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-04-oat",
+      "bucket": "product-color",
+      "prompt": "A single natural oat-beige compressible suede travel slipper, single shoe at three-quarter angle. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-04-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue compressible suede travel slipper, single shoe at three-quarter angle. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-04-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical compressible suede travel slipper, single shoe at three-quarter angle, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a dark charcoal grey, then a natural oat-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-05-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white wool-blend hooded pullover, neatly folded square showing knit texture. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-05-charcoal",
+      "bucket": "product-color",
+      "prompt": "A single dark charcoal grey wool-blend hooded pullover, neatly folded square showing knit texture. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-05-oat",
+      "bucket": "product-color",
+      "prompt": "A single natural oat-beige wool-blend hooded pullover, neatly folded square showing knit texture. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-05-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue wool-blend hooded pullover, neatly folded square showing knit texture. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-05-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical wool-blend hooded pullover, neatly folded square showing knit texture, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a dark charcoal grey, then a natural oat-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-06-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white small cylindrical brass pill case containing reusable silicone earplugs, lid open beside it. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-06-charcoal",
+      "bucket": "product-color",
+      "prompt": "A single dark charcoal grey small cylindrical brass pill case containing reusable silicone earplugs, lid open beside it. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-06-oat",
+      "bucket": "product-color",
+      "prompt": "A single natural oat-beige small cylindrical brass pill case containing reusable silicone earplugs, lid open beside it. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-06-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue small cylindrical brass pill case containing reusable silicone earplugs, lid open beside it. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-06-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical small cylindrical brass pill case containing reusable silicone earplugs, lid open beside it, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a dark charcoal grey, then a natural oat-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-01-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal single rectangular ripstop-nylon compression packing cube with mesh top panel and zipper, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-01-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige single rectangular ripstop-nylon compression packing cube with mesh top panel and zipper, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-01-olive",
+      "bucket": "product-color",
+      "prompt": "A single muted olive green single rectangular ripstop-nylon compression packing cube with mesh top panel and zipper, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-01-crimson",
+      "bucket": "product-color",
+      "prompt": "A single deep crimson red single rectangular ripstop-nylon compression packing cube with mesh top panel and zipper, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-01-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical single rectangular ripstop-nylon compression packing cube with mesh top panel and zipper, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a warm sand-beige, then a muted olive green, then a deep crimson red. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-02-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal flat fabric garment folio with snap closures, lying closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-02-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige flat fabric garment folio with snap closures, lying closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-02-olive",
+      "bucket": "product-color",
+      "prompt": "A single muted olive green flat fabric garment folio with snap closures, lying closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-02-crimson",
+      "bucket": "product-color",
+      "prompt": "A single deep crimson red flat fabric garment folio with snap closures, lying closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-02-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical flat fabric garment folio with snap closures, lying closed, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a warm sand-beige, then a muted olive green, then a deep crimson red. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-03-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal pair of felt-lined fabric shoe sleeves, stacked. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-03-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige pair of felt-lined fabric shoe sleeves, stacked. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-03-olive",
+      "bucket": "product-color",
+      "prompt": "A single muted olive green pair of felt-lined fabric shoe sleeves, stacked. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-03-crimson",
+      "bucket": "product-color",
+      "prompt": "A single deep crimson red pair of felt-lined fabric shoe sleeves, stacked. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-03-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical pair of felt-lined fabric shoe sleeves, stacked, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a warm sand-beige, then a muted olive green, then a deep crimson red. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-04-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal leather travel document wallet, closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-04-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige leather travel document wallet, closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-04-olive",
+      "bucket": "product-color",
+      "prompt": "A single muted olive green leather travel document wallet, closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-04-crimson",
+      "bucket": "product-color",
+      "prompt": "A single deep crimson red leather travel document wallet, closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-04-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical leather travel document wallet, closed, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a warm sand-beige, then a muted olive green, then a deep crimson red. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-05-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal drawstring antibacterial mesh laundry pouch, slightly cinched. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-05-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige drawstring antibacterial mesh laundry pouch, slightly cinched. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-05-olive",
+      "bucket": "product-color",
+      "prompt": "A single muted olive green drawstring antibacterial mesh laundry pouch, slightly cinched. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-05-crimson",
+      "bucket": "product-color",
+      "prompt": "A single deep crimson red drawstring antibacterial mesh laundry pouch, slightly cinched. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-05-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical drawstring antibacterial mesh laundry pouch, slightly cinched, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a warm sand-beige, then a muted olive green, then a deep crimson red. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-06-graphite",
+      "bucket": "product-color",
+      "prompt": "A single deep matte graphite charcoal rolled suede jewelry roll with brass snap closures, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-06-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige rolled suede jewelry roll with brass snap closures, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-06-olive",
+      "bucket": "product-color",
+      "prompt": "A single muted olive green rolled suede jewelry roll with brass snap closures, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-06-crimson",
+      "bucket": "product-color",
+      "prompt": "A single deep crimson red rolled suede jewelry roll with brass snap closures, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-06-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical rolled suede jewelry roll with brass snap closures, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a deep matte graphite charcoal, then a warm sand-beige, then a muted olive green, then a deep crimson red. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-01-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white hangable canvas dopp kit toiletry bag with hook detail and zipper closure, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-01-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black hangable canvas dopp kit toiletry bag with hook detail and zipper closure, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-01-sage",
+      "bucket": "product-color",
+      "prompt": "A single soft muted sage green hangable canvas dopp kit toiletry bag with hook detail and zipper closure, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-01-terracotta",
+      "bucket": "product-color",
+      "prompt": "A single warm terracotta orange-clay hangable canvas dopp kit toiletry bag with hook detail and zipper closure, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-01-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical hangable canvas dopp kit toiletry bag with hook detail and zipper closure, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a matte black, then a soft muted sage green, then a warm terracotta orange-clay. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-02-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white compact rectangular canvas toiletry pouch, zipped closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-02-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black compact rectangular canvas toiletry pouch, zipped closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-02-sage",
+      "bucket": "product-color",
+      "prompt": "A single soft muted sage green compact rectangular canvas toiletry pouch, zipped closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-02-terracotta",
+      "bucket": "product-color",
+      "prompt": "A single warm terracotta orange-clay compact rectangular canvas toiletry pouch, zipped closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-02-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical compact rectangular canvas toiletry pouch, zipped closed, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a matte black, then a soft muted sage green, then a warm terracotta orange-clay. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-03-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white set of four refillable silicone travel bottles with brushed aluminum caps, arranged in a tight row. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-03-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black set of four refillable silicone travel bottles with brushed aluminum caps, arranged in a tight row. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-03-sage",
+      "bucket": "product-color",
+      "prompt": "A single soft muted sage green set of four refillable silicone travel bottles with brushed aluminum caps, arranged in a tight row. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-03-terracotta",
+      "bucket": "product-color",
+      "prompt": "A single warm terracotta orange-clay set of four refillable silicone travel bottles with brushed aluminum caps, arranged in a tight row. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-03-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical set of four refillable silicone travel bottles with brushed aluminum caps, arranged in a tight row, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a matte black, then a soft muted sage green, then a warm terracotta orange-clay. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-04-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white leather sleeve case for a metal safety razor, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-04-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black leather sleeve case for a metal safety razor, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-04-sage",
+      "bucket": "product-color",
+      "prompt": "A single soft muted sage green leather sleeve case for a metal safety razor, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-04-terracotta",
+      "bucket": "product-color",
+      "prompt": "A single warm terracotta orange-clay leather sleeve case for a metal safety razor, lying flat. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-04-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical leather sleeve case for a metal safety razor, lying flat, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a matte black, then a soft muted sage green, then a warm terracotta orange-clay. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-05-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white small brass refillable fragrance atomizer bottle, vertical. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-05-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black small brass refillable fragrance atomizer bottle, vertical. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-05-sage",
+      "bucket": "product-color",
+      "prompt": "A single soft muted sage green small brass refillable fragrance atomizer bottle, vertical. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-05-terracotta",
+      "bucket": "product-color",
+      "prompt": "A single warm terracotta orange-clay small brass refillable fragrance atomizer bottle, vertical. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-05-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical small brass refillable fragrance atomizer bottle, vertical, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a matte black, then a soft muted sage green, then a warm terracotta orange-clay. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-06-cream",
+      "bucket": "product-color",
+      "prompt": "A single soft cream off-white neatly folded stonewashed linen hand towel, square fold. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-06-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black neatly folded stonewashed linen hand towel, square fold. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-06-sage",
+      "bucket": "product-color",
+      "prompt": "A single soft muted sage green neatly folded stonewashed linen hand towel, square fold. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-06-terracotta",
+      "bucket": "product-color",
+      "prompt": "A single warm terracotta orange-clay neatly folded stonewashed linen hand towel, square fold. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-06-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical neatly folded stonewashed linen hand towel, square fold, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a soft cream off-white, then a matte black, then a soft muted sage green, then a warm terracotta orange-clay. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-01-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black rolled-up cable organizer roll with elastic loops, partially unfurled. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-01-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum rolled-up cable organizer roll with elastic loops, partially unfurled. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-01-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige rolled-up cable organizer roll with elastic loops, partially unfurled. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-01-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue rolled-up cable organizer roll with elastic loops, partially unfurled. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-01-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical rolled-up cable organizer roll with elastic loops, partially unfurled, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a matte black, then a polished brushed silver aluminum, then a warm sand-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-02-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black compact universal travel power adapter, cube shape with retractable plugs visible. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-02-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum compact universal travel power adapter, cube shape with retractable plugs visible. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-02-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige compact universal travel power adapter, cube shape with retractable plugs visible. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-02-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue compact universal travel power adapter, cube shape with retractable plugs visible. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-02-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical compact universal travel power adapter, cube shape with retractable plugs visible, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a matte black, then a polished brushed silver aluminum, then a warm sand-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-03-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black compact 4-port GaN charger brick with USB-C ports visible on one side, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-03-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum compact 4-port GaN charger brick with USB-C ports visible on one side, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-03-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige compact 4-port GaN charger brick with USB-C ports visible on one side, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-03-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue compact 4-port GaN charger brick with USB-C ports visible on one side, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-03-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical compact 4-port GaN charger brick with USB-C ports visible on one side, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a matte black, then a polished brushed silver aluminum, then a warm sand-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-04-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black hard-shell case for over-ear headphones, oval form, zippered, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-04-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum hard-shell case for over-ear headphones, oval form, zippered, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-04-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige hard-shell case for over-ear headphones, oval form, zippered, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-04-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue hard-shell case for over-ear headphones, oval form, zippered, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-04-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical hard-shell case for over-ear headphones, oval form, zippered, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a matte black, then a polished brushed silver aluminum, then a warm sand-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-05-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black slim laptop and tablet folio sleeve, lying flat closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-05-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum slim laptop and tablet folio sleeve, lying flat closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-05-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige slim laptop and tablet folio sleeve, lying flat closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-05-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue slim laptop and tablet folio sleeve, lying flat closed, three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-05-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical slim laptop and tablet folio sleeve, lying flat closed, three-quarter view, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a matte black, then a polished brushed silver aluminum, then a warm sand-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-06-black",
+      "bucket": "product-color",
+      "prompt": "A single matte black rectangular slim power bank with brushed-aluminum shell, USB-C port visible at one end. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-06-silver",
+      "bucket": "product-color",
+      "prompt": "A single polished brushed silver aluminum rectangular slim power bank with brushed-aluminum shell, USB-C port visible at one end. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-06-sand",
+      "bucket": "product-color",
+      "prompt": "A single warm sand-beige rectangular slim power bank with brushed-aluminum shell, USB-C port visible at one end. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-06-navy",
+      "bucket": "product-color",
+      "prompt": "A single deep navy blue rectangular slim power bank with brushed-aluminum shell, USB-C port visible at one end. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-06-lineup",
+      "bucket": "product-lineup",
+      "prompt": "Four identical rectangular slim power bank with brushed-aluminum shell, USB-C port visible at one end, lined up in a row from left to right at slight angles, slightly overlapping like an Apple iPhone color-lineup gallery shot. Left to right: a matte black, then a polished brushed silver aluminum, then a warm sand-beige, then a deep navy blue. All four are exactly the same product, same size, same orientation, only the color differs. Pure white seamless studio background, soft even lighting, minimal contact shadow. Wide cinematic composition with negative space. Apple-style product photography. No people, no text, no logos."
     }
   ]
 }
+

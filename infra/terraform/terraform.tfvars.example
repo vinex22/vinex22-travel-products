@@ -1,0 +1,11 @@
+# Copy this file to terraform.tfvars and fill in the values.
+# scripts/init-names.sh and scripts/up.sh do this automatically.
+
+subscription_id        = "00000000-0000-0000-0000-000000000000"
+current_user_object_id = "00000000-0000-0000-0000-000000000000"  # az ad signed-in-user show --query id -o tsv
+owner_suffix           = "abcd"  # 4 lowercase alnum chars; init-names.sh generates one for you
+
+# Optional overrides:
+# project  = "vinex22"
+# location = "centralindia"
+# aks_authorized_ip_ranges = ["0.0.0.0/0"]

@@ -1,0 +1,19 @@
+# checkout-service — .NET; writes orders, calls payment+flags, publishes to SB.
+nameOverride: checkout-service
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 2
+serviceAccount:
+  create: true
+  name: checkout-sa
+  workloadIdentity:
+    enabled: true
+    clientId: ""    # injected
+env:
+  PGHOST:      ""   # injected
+  PGPORT:      "5432"
+  PGUSER:      ""   # injected
+  PGDATABASE:  orders
+  SERVICEBUS_FQDN:  ""   # injected: $SB_NAME.servicebus.windows.net
+  SERVICEBUS_TOPIC: orders
+  PAYMENT_BASE:     "http://payment-service:8080"
+  FLAGS_BASE:       "http://feature-flags:8080"

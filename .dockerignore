@@ -1,0 +1,40 @@
+# Repo-root .dockerignore. Used when building images whose context is the
+# repo root (e.g. web-cloud, services/catalog-service — anything that needs
+# data/catalog.json).
+.git
+.github
+.vscode
+.idea
+
+# All node_modules anywhere
+**/node_modules
+**/.next
+**/out
+
+# Python venvs and caches
+**/__pycache__
+**/.venv
+**/.venv-seed
+**/.mypy_cache
+**/.pytest_cache
+
+# Go / .NET build artifacts
+services/**/bin
+services/**/obj
+
+# Docs / generated images / generation logs
+docs
+image-gen
+*.log
+**/*.log
+
+# Local secrets and tf state
+.local.env
+infra/terraform/.terraform
+infra/terraform/terraform.tfvars
+infra/terraform/*.tfstate*
+kubeconfig*
+
+# OS
+.DS_Store
+Thumbs.db

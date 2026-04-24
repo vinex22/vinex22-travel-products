@@ -1,0 +1,15 @@
+# pricing-service — Python/FastAPI; reads pricing DB via UAMI.
+nameOverride: pricing-service
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 2
+serviceAccount:
+  create: true
+  name: pricing-sa
+  workloadIdentity:
+    enabled: true
+    clientId: ""    # injected by deploy-apps.sh
+env:
+  PGHOST:      ""    # injected: $PG_NAME.postgres.database.azure.com
+  PGPORT:      "5432"
+  PGUSER:      ""    # injected: UAMI principal name
+  PGDATABASE:  pricing

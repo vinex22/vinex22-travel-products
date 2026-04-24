@@ -1,0 +1,78 @@
+# Default values for the microservice chart.
+# Override per-service in infra/helm/values/<service>.yaml.
+
+# REQUIRED — set by deploy-apps.sh via --set
+nameOverride: ""        # used as the resource name + selector value
+image:
+  repository: ""        # full image path: ${ACR_LOGIN}/<svc>
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+# Container port the app listens on (also used as Service port).
+port: 8080
+
+# Service account / workload identity
+serviceAccount:
+  create: false
+  name: ""              # KSA name (must match the federated subject in Terraform)
+  workloadIdentity:
+    enabled: false
+    clientId: ""        # UAMI client ID; injected by deploy-apps.sh
+  tenantId: ""          # injected by deploy-apps.sh (for AZURE_TENANT_ID env)
+
+# Pod-level
+podLabels: {}
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+
+# Env vars: literals (key:value), and any extra raw entries
+env: {}                 # e.g. { PGHOST: "...", PGUSER: "..." }
+extraEnv: []            # raw list of EnvVar entries (e.g. valueFrom.secretKeyRef)
+
+# Probes
+probes:
+  enabled: true
+  readiness:
+    httpGet: { path: /readyz, port: http }
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    timeoutSeconds: 3
+    failureThreshold: 6
+  liveness:
+    httpGet: { path: /healthz, port: http }
+    initialDelaySeconds: 15
+    periodSeconds: 20
+    timeoutSeconds: 3
+    failureThreshold: 3
+
+resources:
+  requests: { cpu: 50m,  memory: 128Mi }
+  limits:   { cpu: 500m, memory: 512Mi }
+
+# Ingress (host-based; uses ingress-nginx)
+ingress:
+  enabled: false
+  className: nginx
+  host: ""
+  path: /
+  pathType: Prefix
+  extraPaths: []
+  annotations: {}
+
+# Service type (ClusterIP for in-cluster microservices)
+service:
+  type: ClusterIP
+
+# Node selector — keep workloads off the "system" pool that has CriticalAddonsOnly
+nodeSelector:
+  pool: user
+
+tolerations: []
+affinity: {}
+
+# Optional command/args overrides
+command: []
+args: []

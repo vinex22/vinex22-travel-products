@@ -1,0 +1,6 @@
+# feature-flags — Go; in-memory flag store.
+nameOverride: feature-flags
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 1
+env:
+  FEATURE_FLAGS: '{"checkoutCrashOnStart":false,"recommendationLatencyMs":0,"cartReadOnly":false}'

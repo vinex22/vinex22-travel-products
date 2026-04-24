@@ -1,0 +1,12 @@
+apiVersion: v2
+name: microservice
+description: |
+  Generic chart for the vinex22-travels services. One chart, one values file
+  per service. Supports:
+    - optional ServiceAccount with Azure Workload Identity annotation
+    - env vars (literal + secretRef)
+    - optional Ingress
+    - configurable port, replicas, probes, resources
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

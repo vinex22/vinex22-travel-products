@@ -1,0 +1,18 @@
+# cart-service — Go; Redis-backed (Basic SKU → access key from K8s Secret).
+nameOverride: cart-service
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 2
+serviceAccount:
+  create: true
+  name: cart-sa
+  workloadIdentity:
+    enabled: true
+    clientId: ""    # injected (for KV lookup if you wire it later)
+env:
+  REDIS_ADDR: ""    # injected: $REDIS_HOST:6380 (TLS)
+extraEnv:
+  - name: REDIS_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: redis-credentials
+        key: primaryKey

@@ -29,3 +29,36 @@ build/
 *.pem
 *.key
 .azure/
+
+# Local environment & generated names (created by scripts/init-names.sh)
+.local.env
+# Local docker-compose secrets (created by scripts/local-up.sh)
+.env.local
+
+# Terraform (local state — do NOT commit). Lock file IS committed.
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+infra/terraform/terraform.tfvars
+
+# Kubeconfig pulled by scripts/aks-credentials.sh
+kubeconfig
+kubeconfig-*
+
+# Go build artifacts
+services/**/bin/
+services/**/*.exe
+
+# .NET
+services/**/bin/
+services/**/obj/
+
+# Seed scratch
+data/seeds/*.tmp
+

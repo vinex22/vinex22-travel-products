@@ -1,0 +1,22 @@
+# api-gateway — Node; HTTP edge for downstream services.
+nameOverride: api-gateway
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 2
+env:
+  CATALOG_BASE:        "http://catalog-service:8080"
+  PRICING_BASE:        "http://pricing-service:8080"
+  CART_BASE:           "http://cart-service:8080"
+  CHECKOUT_BASE:       "http://checkout-service:8080"
+  INVENTORY_BASE:      "http://inventory-service:8080"
+  RECOMMENDATION_BASE: "http://recommendation-service:8080"
+  NOTIFICATION_BASE:   "http://notification-service:8080"
+  FLAGS_BASE:          "http://feature-flags:8080"
+ingress:
+  enabled: true
+  className: nginx
+  host: ""
+  path: /api
+  pathType: Prefix
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # path -> /api(/|$)(.*)

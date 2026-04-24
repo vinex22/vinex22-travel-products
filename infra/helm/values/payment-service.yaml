@@ -1,0 +1,4 @@
+# payment-service — .NET; stateless mock authoriser.
+nameOverride: payment-service
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 2

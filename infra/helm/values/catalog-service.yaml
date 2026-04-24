@@ -1,0 +1,6 @@
+# catalog-service — Python; pulls live prices from pricing-service.
+nameOverride: catalog-service
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 2
+env:
+  PRICING_BASE: "http://pricing-service:8080"

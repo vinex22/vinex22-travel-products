@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{5854FF58-B8C5-05C6-5BF2-ACE42193F22B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "checkout-service", "checkout-service", "{DF1B219E-FA89-5B2F-8E8D-B0309AA5271C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutService", "services\checkout-service\CheckoutService.csproj", "{C70F4045-30D8-2CD4-EABE-B736C7C19427}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "payment-service", "payment-service", "{4E227855-4648-962A-E790-FD207C358556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService", "services\payment-service\PaymentService.csproj", "{C872CDA8-6293-F894-D08F-80B95EBE8EA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C70F4045-30D8-2CD4-EABE-B736C7C19427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70F4045-30D8-2CD4-EABE-B736C7C19427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70F4045-30D8-2CD4-EABE-B736C7C19427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70F4045-30D8-2CD4-EABE-B736C7C19427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C872CDA8-6293-F894-D08F-80B95EBE8EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C872CDA8-6293-F894-D08F-80B95EBE8EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C872CDA8-6293-F894-D08F-80B95EBE8EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C872CDA8-6293-F894-D08F-80B95EBE8EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF1B219E-FA89-5B2F-8E8D-B0309AA5271C} = {5854FF58-B8C5-05C6-5BF2-ACE42193F22B}
+		{C70F4045-30D8-2CD4-EABE-B736C7C19427} = {DF1B219E-FA89-5B2F-8E8D-B0309AA5271C}
+		{4E227855-4648-962A-E790-FD207C358556} = {5854FF58-B8C5-05C6-5BF2-ACE42193F22B}
+		{C872CDA8-6293-F894-D08F-80B95EBE8EA6} = {4E227855-4648-962A-E790-FD207C358556}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C2914AD-14F9-4F76-AE1C-13E0853CB0E8}
+	EndGlobalSection
+EndGlobal

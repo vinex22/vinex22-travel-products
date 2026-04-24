@@ -1,0 +1,4 @@
+# Shared deps for all seeders. Used by scripts/seed-*.py.
+azure-identity>=1.19.0
+azure-storage-blob>=12.23.0
+psycopg[binary]>=3.2.3

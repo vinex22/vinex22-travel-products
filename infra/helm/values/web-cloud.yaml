@@ -1,0 +1,46 @@
+# web-cloud — Next.js storefront. Streams blobs via UAMI (Storage Blob Data Reader).
+nameOverride: web-cloud
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 2
+port: 3000
+serviceAccount:
+  create: true
+  name: web-sa
+  workloadIdentity:
+    enabled: true
+    clientId: ""    # injected
+env:
+  NODE_ENV:                 "production"
+  NEXT_PUBLIC_IMAGE_BASE:   "/api/image"
+  NEXT_PUBLIC_API_BASE:     "/api"
+  PRICING_BASE:             "http://pricing-service:8080"
+  AZURE_STORAGE_ACCOUNT:    ""    # injected
+  AZURE_STORAGE_CONTAINER:  "images"
+# Next.js doesn't ship /healthz; fall back to TCP socket probes on the http port.
+probes:
+  enabled: true
+  readiness:
+    httpGet: null
+    tcpSocket: { port: http }
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 3
+    failureThreshold: 6
+  liveness:
+    httpGet: null
+    tcpSocket: { port: http }
+    initialDelaySeconds: 30
+    periodSeconds: 20
+    timeoutSeconds: 3
+    failureThreshold: 3
+ingress:
+  enabled: true
+  className: nginx
+  host: ""
+  path: /
+  pathType: Prefix
+  extraPaths:
+    - path: /api/image
+      pathType: Prefix
+    - path: /api/price
+      pathType: Prefix

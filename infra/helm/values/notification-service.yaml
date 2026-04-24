@@ -1,0 +1,6 @@
+# notification-service — Node; mock dispatcher.
+nameOverride: notification-service
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 1
+env:
+  READY_DELAY_MS: "0"

@@ -1,0 +1,6 @@
+# recommendation-service — Python; fetches catalog for cross-sell.
+nameOverride: recommendation-service
+image: { repository: "PLACEHOLDER", tag: latest }
+replicaCount: 1
+env:
+  CATALOG_BASE: "http://catalog-service:8080"

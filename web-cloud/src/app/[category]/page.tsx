@@ -1,5 +1,6 @@
 import { categories, getCategory, getProductsByCategory } from '@/lib/catalog';
 import { imageUrl } from '@/lib/imageUrl';
+import { Price } from '@/components/Price';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -46,7 +47,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <div className="mt-4">
                   <p className="text-sm font-medium text-ink dark:text-paper">{p.name}</p>
                   <p className="text-xs text-ink-mute">{p.short}</p>
-                  <p className="text-xs text-ink dark:text-paper mt-1">${p.price}</p>
+                  <p className="text-xs text-ink dark:text-paper mt-1"><Price sku={`${p.id}-${p.colors[0].slug}`} fallback={p.price} /></p>
                 </div>
               </Link>
             ))}
