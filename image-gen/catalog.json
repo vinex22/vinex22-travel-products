@@ -1,0 +1,387 @@
+{
+  "brand": {
+    "name": "vinex22-travels",
+    "style": "Apple.com inspired premium D2C travel-essentials brand. Photorealistic, cinematic editorial photography, magazine-cover quality. Minimalist composition with generous negative space, soft natural light, shallow depth of field, subtle film grain. Neutral palette: warm whites, charcoal, deep navy, sand, burnt sienna accents. Premium materials: brushed aluminum, waxed canvas, full-grain leather, merino wool, ripstop nylon. No people in product shots; lifestyle shots may include people but faces should be away from camera, in shadow, or out of focus. Avoid stock-photo look \u2014 always editorial, always considered.",
+    "branding_clause": "BRANDING: include a small, discreet 'vinex22' wordmark on the product, rendered in clean lowercase sans-serif typography (Inter or Helvetica style). The wordmark must be small (no larger than 5% of the frame), positioned subtly \u2014 debossed into leather patches, etched into brushed aluminum, embroidered on canvas/nylon, or printed on a small woven label or zipper pull. Never bold, never centered, never a hero element. Spell exactly: vinex22 (lowercase, no spaces, no hyphen). No other text, no other logos, no other brand marks. The wordmark is the only text allowed in the image.",
+    "no_branding_clause": "No text of any kind, no typography, no logos, no watermarks, no brand marks anywhere in the image.",
+    "branded_buckets": ["product", "category"]
+  },
+  "buckets": {
+    "hero": {
+      "size": "1792x1024",
+      "purpose": "Full-bleed homepage and category landing heroes"
+    },
+    "category": {
+      "size": "1792x1024",
+      "purpose": "Category page covers"
+    },
+    "product": {
+      "size": "1024x1024",
+      "purpose": "Product card images on neutral seamless backdrop"
+    },
+    "lifestyle": {
+      "size": "1792x1024",
+      "purpose": "Editorial lifestyle moments"
+    },
+    "texture": {
+      "size": "1024x1024",
+      "purpose": "Material and detail close-ups for storytelling sections"
+    },
+    "campaign": {
+      "size": "1792x1024",
+      "purpose": "Editorial campaign hero scenes for the homepage and brand-story sections"
+    },
+    "backdrop-wide": {
+      "size": "1792x1024",
+      "purpose": "Landscape parallax backdrops for hero, section dividers, and footer"
+    },
+    "backdrop-tall": {
+      "size": "1024x1792",
+      "purpose": "Portrait parallax backdrops for stacked sections and editorial column blocks"
+    }
+  },
+  "images": [
+    {
+      "id": "hero-carry",
+      "bucket": "hero",
+      "prompt": "A single charcoal-grey aluminum-frame carry-on suitcase standing alone on a polished concrete floor in a sun-drenched modern airport terminal. Soft golden-hour light streaming through floor-to-ceiling windows. Strong directional shadow. Wide cinematic composition with massive negative space above. Editorial product photography. No people, no text, no logos."
+    },
+    {
+      "id": "hero-rest",
+      "bucket": "hero",
+      "prompt": "A premium memory-foam neck pillow in soft cream cashmere resting on a folded charcoal wool airline blanket. Placed on a window-seat tray table with blurred clouds visible through the airplane window. Warm cabin lighting, shallow depth of field. Cinematic editorial composition with negative space on the right. No people, no text, no logos."
+    },
+    {
+      "id": "hero-pack",
+      "bucket": "hero",
+      "prompt": "An overhead flat-lay of three open packing cubes in deep navy ripstop fabric, neatly filled with rolled white linen shirts and folded denim. Arranged on a warm oak wood surface. Soft diffused window light from the left. Minimalist editorial styling, ample negative space. No people, no text, no logos."
+    },
+    {
+      "id": "hero-care",
+      "bucket": "hero",
+      "prompt": "A hanging open toiletry organizer in burnt-sienna waxed canvas with brass hardware, containing a few small unbranded amber glass bottles and a folded white linen washcloth. Hung on a hook against a textured travertine bathroom wall. Soft warm lighting, shallow depth of field. Cinematic editorial. No people, no text, no logos."
+    },
+    {
+      "id": "hero-tech",
+      "bucket": "hero",
+      "prompt": "A flat-lay arrangement of a deep-navy cable organizer roll partially unrolled, revealing braided cables, a slim brushed-aluminum power bank, and a compact universal travel adapter. On a charcoal slate surface with a single soft overhead light. Minimalist Apple-style product composition with strong negative space. No people, no text, no logos."
+    },
+    {
+      "id": "category-carry",
+      "bucket": "category",
+      "prompt": "Three carry-on suitcases of different sizes (cabin, medium, large) arranged in a clean row at slight angles, in matte charcoal, deep navy, and warm sand colors. Studio seamless white background. Soft even lighting with subtle shadow. Editorial product lineup. No people, no text, no logos."
+    },
+    {
+      "id": "category-rest",
+      "bucket": "category",
+      "prompt": "A neat arrangement of a cream cashmere neck pillow, a charcoal silk sleep mask, and a folded merino travel blanket on a warm oak surface. Soft natural side lighting. Editorial flat-lay with breathing room. No people, no text, no logos."
+    },
+    {
+      "id": "category-pack",
+      "bucket": "category",
+      "prompt": "Five packing cubes in graduated sizes, deep navy ripstop nylon, stacked diagonally on a soft beige linen surface. Soft top-down lighting. Minimalist editorial composition. No people, no text, no logos."
+    },
+    {
+      "id": "category-care",
+      "bucket": "category",
+      "prompt": "A burnt-sienna waxed canvas toiletry kit unzipped to reveal compartments with small unbranded amber glass bottles and a folded white linen towel. On a travertine stone counter with soft window light. Editorial styling. No people, no text, no logos."
+    },
+    {
+      "id": "category-tech",
+      "bucket": "category",
+      "prompt": "A clean lineup of travel tech accessories on charcoal slate: a brushed-aluminum power bank, a universal travel adapter, a navy cable organizer roll, and a small leather AirTag holder. Soft directional lighting. Apple-style product hero. No people, no text, no logos."
+    },
+
+    {
+      "id": "product-carry-01",
+      "bucket": "product",
+      "prompt": "Charcoal aluminum carry-on suitcase, hard-shell, four spinner wheels, telescoping handle extended halfway. Three-quarter front view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-02",
+      "bucket": "product",
+      "prompt": "Deep-navy soft-shell weekender duffel bag with leather handles and brass YKK zippers. Three-quarter view. Pure white seamless studio background, soft even lighting, minimal contact shadow. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-03",
+      "bucket": "product",
+      "prompt": "Warm sand-colored hard-shell check-in suitcase, large size, four spinner wheels, recessed combination lock. Three-quarter front view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-04",
+      "bucket": "product",
+      "prompt": "Black ballistic-nylon laptop backpack with padded straps and a clean minimalist silhouette. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-05",
+      "bucket": "product",
+      "prompt": "Olive waxed-canvas messenger bag with leather flap and brass buckles. Three-quarter front view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-carry-06",
+      "bucket": "product",
+      "prompt": "Cream-colored leather garment bag, folded and presented at a three-quarter angle. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+
+    {
+      "id": "product-rest-01",
+      "bucket": "product",
+      "prompt": "Memory-foam U-shaped neck pillow in soft cream cashmere fabric. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-02",
+      "bucket": "product",
+      "prompt": "Charcoal silk sleep mask with elastic strap, lying flat. Top-down view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-03",
+      "bucket": "product",
+      "prompt": "Folded merino-wool travel blanket in deep navy, neatly folded into a square. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-04",
+      "bucket": "product",
+      "prompt": "Inflatable footrest hammock in matte black ripstop nylon, partially inflated, presented at three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-05",
+      "bucket": "product",
+      "prompt": "Compact noise-isolating foam earplugs in a small cream linen pouch beside them. Top-down view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-rest-06",
+      "bucket": "product",
+      "prompt": "Wide-band airline compression socks in heather grey, folded into a neat pair. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+
+    {
+      "id": "product-pack-01",
+      "bucket": "product",
+      "prompt": "A set of three packing cubes in deep navy ripstop nylon, stacked from large to small. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-02",
+      "bucket": "product",
+      "prompt": "A vacuum-style compression packing bag, half-rolled, in matte sand-colored fabric. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-03",
+      "bucket": "product",
+      "prompt": "A shoe pouch in deep-navy waterproof fabric, zipped closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-04",
+      "bucket": "product",
+      "prompt": "A laundry pouch in burnt-sienna waxed canvas with a drawstring top. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-05",
+      "bucket": "product",
+      "prompt": "A folder-style garment organizer in matte charcoal nylon, closed flat. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-pack-06",
+      "bucket": "product",
+      "prompt": "A small flat tech pouch in deep navy with a clean zipper, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+
+    {
+      "id": "product-care-01",
+      "bucket": "product",
+      "prompt": "A hanging toiletry organizer in burnt-sienna waxed canvas with brass hardware, fully zipped closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-02",
+      "bucket": "product",
+      "prompt": "A small leak-proof silicone travel bottle set, three bottles in cream, sand, and charcoal colors, arranged in a row. Top-down view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-03",
+      "bucket": "product",
+      "prompt": "A compact bamboo travel toothbrush in a slim cream linen sleeve. Top-down view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-04",
+      "bucket": "product",
+      "prompt": "A wet-dry pouch in deep navy waterproof fabric, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-05",
+      "bucket": "product",
+      "prompt": "A zippered jewelry travel roll in cream leather, partially unrolled to show small compartments. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-care-06",
+      "bucket": "product",
+      "prompt": "A grooming kit in a slim charcoal canvas zip case, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+
+    {
+      "id": "product-tech-01",
+      "bucket": "product",
+      "prompt": "A slim brushed-aluminum 10000mAh power bank with a single USB-C port. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-02",
+      "bucket": "product",
+      "prompt": "A compact universal travel adapter, white plastic with rounded edges, plugs partially extended. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-03",
+      "bucket": "product",
+      "prompt": "A roll-up cable organizer in deep-navy waxed canvas, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-04",
+      "bucket": "product",
+      "prompt": "A pair of premium wireless noise-cancelling earbuds in a matte charcoal charging case, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-05",
+      "bucket": "product",
+      "prompt": "A small leather card-and-passport wallet with an integrated tracker pocket, in warm cognac leather. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+    {
+      "id": "product-tech-06",
+      "bucket": "product",
+      "prompt": "A compact e-ink reading sleeve in a charcoal felt case, closed. Three-quarter view. Pure white seamless studio background, soft even lighting. Apple-style product photography. No people, no text, no logos."
+    },
+
+    {
+      "id": "lifestyle-airport-01",
+      "bucket": "lifestyle",
+      "prompt": "A traveler from behind, shoulder-down framing, walking through a sunlit modern airport corridor pulling a charcoal aluminum carry-on suitcase. Soft warm morning light, motion blur on the figure, sharp focus on the suitcase. Cinematic editorial photography. No faces visible, no text, no logos."
+    },
+    {
+      "id": "lifestyle-hotel-01",
+      "bucket": "lifestyle",
+      "prompt": "A neat hotel-room scene: a deep-navy weekender duffel bag placed on a wooden luggage rack at the foot of a crisp white-linen bed. Soft window light streaming in from the right. Editorial interior photography, shallow depth of field. No people, no text, no logos."
+    },
+    {
+      "id": "lifestyle-train-01",
+      "bucket": "lifestyle",
+      "prompt": "Through a high-speed train window: a person's hands resting on a folded merino wool travel blanket on their lap, with a leather card wallet and a paperback book beside them. Warm afternoon light, blurred countryside outside. Editorial cinematic. Hands only, no faces, no text, no logos."
+    },
+    {
+      "id": "lifestyle-cafe-01",
+      "bucket": "lifestyle",
+      "prompt": "A small cafe table at an airport lounge: a brushed-aluminum power bank charging an unspecified phone, a flat white coffee in a ceramic cup, and a leather card wallet. Soft window light, shallow depth of field. Editorial photography. No people visible, no text, no logos."
+    },
+    {
+      "id": "lifestyle-mountain-01",
+      "bucket": "lifestyle",
+      "prompt": "A cabin-on-stilts at golden hour with snowy mountains in the distance. A traveler's silhouette stands on the deck with an olive waxed-canvas messenger bag slung over their shoulder, looking out. Cinematic wide composition. Silhouette only, no faces, no text, no logos."
+    },
+    {
+      "id": "lifestyle-packing-01",
+      "bucket": "lifestyle",
+      "prompt": "Overhead view of a charcoal carry-on suitcase open on a hardwood floor in a sunlit bedroom, neatly packed with rolled clothing in deep-navy packing cubes, a cream cashmere neck pillow tucked into one corner. Soft morning window light. Editorial flat-lay. No people, no text, no logos."
+    },
+    {
+      "id": "lifestyle-window-seat",
+      "bucket": "lifestyle",
+      "prompt": "A view from an airplane window seat: a charcoal silk sleep mask resting on a folded merino wool blanket on the tray table, with soft cloudscape visible through the window. Warm cabin lighting, shallow depth of field. Editorial. No people, no text, no logos."
+    },
+    {
+      "id": "lifestyle-coastal-01",
+      "bucket": "lifestyle",
+      "prompt": "A sand-colored hard-shell suitcase standing on a wooden boardwalk over a beach at golden hour, ocean waves softly visible in background. Warm side light, long shadow. Cinematic editorial composition with negative space. No people, no text, no logos."
+    },
+
+    {
+      "id": "texture-canvas",
+      "bucket": "texture",
+      "prompt": "Extreme close-up macro shot of waxed canvas fabric weave in burnt-sienna color, showing rich texture, subtle wax sheen, and brass YKK zipper teeth at the edge of frame. Soft directional lighting, shallow depth of field. Editorial detail photography. No people, no text, no logos."
+    },
+    {
+      "id": "texture-aluminum",
+      "bucket": "texture",
+      "prompt": "Extreme close-up macro shot of a brushed aluminum suitcase corner showing the radial grain pattern, a polished chrome rivet, and the edge of a hard-shell panel. Soft directional lighting that emphasizes the brushed texture. Editorial detail photography. No people, no text, no logos."
+    },
+    {
+      "id": "campaign-sunrise-departure",
+      "bucket": "campaign",
+      "prompt": "Cinematic editorial campaign image for a premium travel-essentials brand. A traveler shot from behind walks across an empty sunlit airport apron toward a waiting jet at sunrise, pulling a charcoal aluminum carry-on suitcase. Long shadow stretches across the tarmac. Warm golden-hour light, deep blue sky, lens flare. Composition leaves the upper third as negative space (sky). The traveler is small in frame to emphasize scale. Inspired by Apple product launch and luxury hospitality advertising. No faces visible, no text, no logos, no airline branding."
+    },
+    {
+      "id": "campaign-quiet-cabin",
+      "bucket": "campaign",
+      "prompt": "Cinematic editorial campaign image for a premium travel-essentials brand. Wide interior shot of a serene minimalist mountain cabin at dusk: a cream cashmere neck pillow rests on a folded merino blanket on a low oak bench by a floor-to-ceiling window. Snowy mountains visible outside in soft alpenglow. Warm interior lighting from a single brass pendant. Strong negative space, magazine-spread quality. Inspired by luxury hospitality campaigns. No people, no text, no logos."
+    },
+    {
+      "id": "backdrop-hero-mountains",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic landscape photograph of a vast alpine ridgeline at dawn. Snow-dusted granite peaks recede into soft pink and powder-blue mist. Foreground shows out-of-focus pine boughs. Wide aspect, generous sky, painterly atmosphere, subtle film grain. National Geographic editorial quality. No people, no man-made objects, no text."
+    },
+    {
+      "id": "backdrop-hero-runway",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic landscape photograph of a wet airport tarmac at dusk after rain. Distant silhouette of a parked jet, runway lights reflecting in puddles, deep teal sky with low golden horizon. Atmospheric, moody, painterly. Wide cinematic aspect. No people, no airline livery, no text, no logos."
+    },
+    {
+      "id": "backdrop-hero-coast",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic aerial landscape of a winding coastal road carved into atlantic-blue cliffs. Soft morning haze, distant headlands fading to pale grey, narrow ribbon of asphalt with no cars. Editorial travel magazine quality. Wide aspect. No people, no text, no logos."
+    },
+    {
+      "id": "backdrop-section-sky",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic aerial cloudscape photographed from a window seat at golden hour. Layered cumulus illuminated from the side, deep blue stratosphere above, soft amber horizon. Painterly, dreamlike, magazine-cover quality. Wide aspect. No aircraft visible, no text, no logos."
+    },
+    {
+      "id": "backdrop-section-hotel",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic editorial photograph of a quiet luxury hotel balcony at dawn. Linen curtains drift in soft breeze, pale wooden floor, distant mountain range visible through the open doorway in soft morning haze. Warm natural light. Strong negative space. Architectural Digest quality. No people, no text, no logos."
+    },
+    {
+      "id": "backdrop-section-city",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic skyline photograph of a refined Asian metropolis at blue hour. Glass towers reflect cool blue twilight, scattered warm window lights, low river in foreground catching reflections. Muted desaturated palette, editorial travel magazine quality. Wide cinematic aspect. No text, no readable signage, no logos."
+    },
+    {
+      "id": "backdrop-section-desert",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic landscape of wind-rippled sand dunes at late afternoon. Long curving shadow lines, single set of soft footprints disappearing toward distant ridge, warm apricot and umber tones. Painterly, minimalist, National Geographic quality. Wide aspect. No people visible, no text, no logos."
+    },
+    {
+      "id": "backdrop-section-forest",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic landscape of a misty pine forest at dawn. Tall slender trunks recede into soft volumetric light, fern undergrowth, cool green palette with golden shafts of sun breaking through. Atmospheric, painterly. Wide aspect. No people, no man-made objects, no text."
+    },
+    {
+      "id": "backdrop-section-lake",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic landscape of a glassy alpine lake at dawn with perfect mirror reflection of surrounding snow-dusted peaks. Pale pink sky, total stillness, single wisp of mist on the water. Painterly, meditative. Wide aspect. No people, no boats, no text, no logos."
+    },
+    {
+      "id": "backdrop-section-train",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic landscape view through a moving train window of European countryside in summer. Soft motion blur on rolling green fields and distant farmhouses, sharp focus on the lower edge of the window frame. Warm afternoon light. Editorial travel quality. Wide aspect. No people, no text, no logos."
+    },
+    {
+      "id": "backdrop-footer-stars",
+      "bucket": "backdrop-wide",
+      "prompt": "Cinematic night landscape of a snowy mountain ridge under a vivid green and violet aurora borealis. Deep navy sky scattered with stars, snow softly catching the auroral glow. Painterly, awe-inspiring, National Geographic quality. Wide aspect. No people, no man-made objects, no text."
+    },
+    {
+      "id": "backdrop-campaign-cabin",
+      "bucket": "backdrop-tall",
+      "prompt": "Cinematic vertical landscape photograph of a single rustic timber cabin nestled deep in a snowy pine forest at dusk. Warm amber glow from the cabin window, soft falling snow, towering dark pines framing the composition top to bottom. Painterly, atmospheric, magazine-cover quality. Tall portrait aspect. No people visible, no text, no logos."
+    },
+    {
+      "id": "backdrop-campaign-tarmac",
+      "bucket": "backdrop-tall",
+      "prompt": "Cinematic vertical photograph of a single private jet on a quiet tarmac at golden hour. Long shadow stretches toward the camera, jet silhouetted against a deep amber and lavender sky, distant hangar in soft focus. Tall portrait aspect, editorial campaign quality. No people, no airline livery, no text, no logos."
+    },
+    {
+      "id": "backdrop-campaign-harbor",
+      "bucket": "backdrop-tall",
+      "prompt": "Cinematic vertical photograph of a quiet sailboat harbor at dusk. Several moored sailboats with reflections shimmering in still water, distant lanterns casting warm pools of light on the dock, deep teal sky transitioning to lavender. Tall portrait aspect, painterly, editorial travel quality. No people, no text, no readable signage, no logos."
+    },
+    {
+      "id": "backdrop-campaign-snow",
+      "bucket": "backdrop-tall",
+      "prompt": "Cinematic vertical landscape of a lone figure (shot from behind, very small in frame) walking along a wind-swept snowy ridge under heavy overcast sky. Near-monochrome palette of soft greys and whites, painterly, contemplative, awe-inspiring. Tall portrait aspect. Face not visible, no text, no logos."
+    }
+  ]
+}

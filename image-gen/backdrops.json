@@ -1,0 +1,37 @@
+{
+  "_instructions": "Paste Unsplash photo URLs below. Use the photo PAGE url (e.g. https://unsplash.com/photos/<slug>-<id>) OR a direct download url. The downloader will extract the photo id, fetch the largest available JPG, save as <slot>.jpg in web/public/backdrops/, and record attribution.",
+  "_slots_hint": [
+    "hero-mountains   - main landing parallax (wide alpine vista, dawn)",
+    "hero-runway      - airport runway / departure mood",
+    "hero-coast       - coastal road / cliffside",
+    "section-sky      - cloudscape from window seat",
+    "section-hotel    - quiet hotel interior or balcony view",
+    "section-city     - city skyline, neutral palette",
+    "section-desert   - desert dunes / minimal landscape",
+    "section-forest   - misty forest / pine",
+    "section-lake     - alpine lake reflection",
+    "section-train    - train window scenery",
+    "footer-stars     - night sky / aurora",
+    "campaign-cabin   - rustic mountain cabin",
+    "campaign-tarmac  - aircraft on tarmac at golden hour",
+    "campaign-harbor  - quiet harbor at dusk",
+    "campaign-snow    - snowy peaks, monochrome"
+  ],
+  "backdrops": [
+    { "slot": "hero-mountains",  "url": "", "credit": "" },
+    { "slot": "hero-runway",     "url": "", "credit": "" },
+    { "slot": "hero-coast",      "url": "", "credit": "" },
+    { "slot": "section-sky",     "url": "", "credit": "" },
+    { "slot": "section-hotel",   "url": "", "credit": "" },
+    { "slot": "section-city",    "url": "", "credit": "" },
+    { "slot": "section-desert",  "url": "", "credit": "" },
+    { "slot": "section-forest",  "url": "", "credit": "" },
+    { "slot": "section-lake",    "url": "", "credit": "" },
+    { "slot": "section-train",   "url": "", "credit": "" },
+    { "slot": "footer-stars",    "url": "", "credit": "" },
+    { "slot": "campaign-cabin",  "url": "", "credit": "" },
+    { "slot": "campaign-tarmac", "url": "", "credit": "" },
+    { "slot": "campaign-harbor", "url": "", "credit": "" },
+    { "slot": "campaign-snow",   "url": "", "credit": "" }
+  ]
+}

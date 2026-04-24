@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# Image generation logs
+image-gen/generation*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Node (for upcoming web/)
+node_modules/
+.next/
+out/
+dist/
+build/
+.turbo/
+
+# Secrets
+*.pem
+*.key
+.azure/
