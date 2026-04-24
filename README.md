@@ -10,7 +10,8 @@ A polyglot e-commerce demo on AKS Automatic showcasing **Azure SRE Agent** for p
 |---|---|
 | [wiki/](wiki/) | Planning, decisions (ADRs), demo acts, changelog |
 | [image-gen/](image-gen/) | Foundry `gpt-image-2` pipeline for product/lifestyle/backdrop imagery |
-| `web/` | (planned) Next.js storefront |
+| [web/](web/) | **Local** Next.js storefront — images bundled from `public/images/`. Iterate here. |
+| [web-cloud/](web-cloud/) | **Cloud** Next.js storefront — images served from Azure Storage via `NEXT_PUBLIC_IMAGE_BASE`. Mirror tested changes here before deploy. |
 | `services/` | (planned) 12 polyglot microservices (TS, Python, Go, .NET) |
 | `infra/` | (planned) Bicep IaC for AKS Automatic + observability |
 | `agent/` | (planned) SRE Agent subagents, response plans, knowledge |
