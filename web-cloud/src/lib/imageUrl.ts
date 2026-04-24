@@ -1,16 +1,15 @@
 /**
- * Cloud image URL helper.
+ * Image URL helper.
  *
- * In the CLOUD variant, images live in an Azure Storage account container
- * (e.g. https://stvinex22travels.blob.core.windows.net/images/...).
- * The base is configured via NEXT_PUBLIC_IMAGE_BASE.
+ * - When `NEXT_PUBLIC_IMAGE_BASE` is set (e.g. "/api/image"), prefixes every
+ *   /images/... path with it so requests flow through the server-side proxy
+ *   that authenticates to Azure Blob Storage with DefaultAzureCredential.
+ * - When unset, returns the local /images path (bundled assets in public/).
  *
- * If the env var is unset, falls back to local /images so the cloud build
- * still renders during development.
+ * No SAS tokens or storage keys are ever used — the proxy uses managed identity.
  */
 export function imageUrl(path: string): string {
   const base = process.env.NEXT_PUBLIC_IMAGE_BASE?.replace(/\/$/, '') ?? '';
-  if (!base) return path; // local fallback
-  // path starts with /images/...
+  if (!base) return path;
   return `${base}${path}`;
 }

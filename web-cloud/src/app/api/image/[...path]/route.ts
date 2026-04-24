@@ -5,6 +5,7 @@ import { DefaultAzureCredential } from '@azure/identity';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
+// Lazy singleton — a new credential per cold start, reused across requests.
 let cachedClient: BlobServiceClient | null = null;
 function getClient(account: string): BlobServiceClient {
   if (cachedClient) return cachedClient;
@@ -37,6 +38,9 @@ export async function GET(
   }
 
   const { path } = await params;
+  // Path arrives as e.g. ["images", "hero", "hero-carry.png"]; the leading
+  // "images" segment is part of the public URL but the blob is named without it
+  // when the container itself is "images". Strip it if present.
   const segments = path[0] === 'images' ? path.slice(1) : path;
   const blobName = segments.join('/');
   if (!blobName) return new Response('Not found', { status: 404 });

@@ -27,7 +27,7 @@ export function Footer() {
       </div>
       <div className="border-t border-black/5 dark:border-white/5">
         <div className="mx-auto max-w-7xl px-6 py-6 flex justify-between text-xs text-ink-mute">
-          <span>© 2026 vinex22-travels · cloud</span>
+          <span>© 2026 vinex22-travels</span>
           <span>Created by <a href="mailto:vinex22@gmail.com" className="hover:text-ink dark:hover:text-paper transition-colors">vinex22@gmail.com</a> · <a href="mailto:vinayjain@microsoft.com" className="hover:text-ink dark:hover:text-paper transition-colors">vinayjain@microsoft.com</a></span>
         </div>
       </div>
