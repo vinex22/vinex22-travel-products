@@ -16,6 +16,7 @@ Tracking doc for the Azure SRE Agent customer demo. Source of truth for **what w
 | 07 | [Changelog](07-changelog.md) | Date-ordered delivery log |
 | 08 | [Backlog](08-backlog.md) | Open questions, TODO, risks |
 | 09 | [Cost](09-cost.md) | Monthly $ estimate + cost knobs |
+| 10 | [Service Communication Technote](10-service-communication-technote.md) | What each service does and how services talk to each other |
 | -- | [Decisions](decisions/README.md) | ADR-style decision log (one file per decision) |
 
 ## Status legend

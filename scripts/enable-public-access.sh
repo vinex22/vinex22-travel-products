@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# enable-public-access.sh — Re-enables public network access on all PaaS resources
-# after the subscription policy disables it every 24 hours.
+# enable-public-access.sh — Starts stopped AKS/PostgreSQL resources and re-enables
+# public network access on all PaaS resources after subscription automation disables
+# them every 24 hours.
 #
 # Run:  bash scripts/enable-public-access.sh
 # Safe to re-run anytime (idempotent).
@@ -21,76 +22,176 @@ AKS="aks-${PROJECT}-${OWNER_SUFFIX}"
 
 info "resource group: ${RG}"
 
-# Run all in parallel
-pids=()
+ensure_postgres_running() {
+  substep "PostgreSQL: ensure server is running"
+  PG_STATE="$(az postgres flexible-server show -g "$RG" -n "$PG" --query state -o tsv 2>/dev/null || true)"
+  case "$PG_STATE" in
+    Ready)
+      ok "PostgreSQL already running"
+      ;;
+    Stopped)
+      if az postgres flexible-server start -g "$RG" -n "$PG" -o none 2>&1; then
+        ok "PostgreSQL started"
+      else
+        err "PostgreSQL start failed"
+        exit 1
+      fi
+      ;;
+    *)
+      warn "PostgreSQL state is '${PG_STATE:-unknown}' — leaving start unchanged"
+      ;;
+  esac
+}
 
-# 1. PostgreSQL Flexible Server
-(
+ensure_aks_running() {
+  substep "AKS: ensure cluster is running"
+  AKS_STATE="$(az aks show -g "$RG" -n "$AKS" --query powerState.code -o tsv 2>/dev/null || true)"
+  case "$AKS_STATE" in
+    Running)
+      ok "AKS already running"
+      ;;
+    Stopped)
+      if az aks start -g "$RG" -n "$AKS" -o none 2>&1; then
+        ok "AKS started"
+      else
+        err "AKS start failed"
+        exit 1
+      fi
+      ;;
+    *)
+      warn "AKS state is '${AKS_STATE:-unknown}' — leaving start unchanged"
+      ;;
+  esac
+}
+
+enable_postgres_public_access() {
   substep "PostgreSQL: enable public access"
-  az postgres flexible-server update \
+  if az postgres flexible-server update \
     -g "$RG" -n "$PG" \
     --public-access Enabled \
-    -o none 2>&1 && ok "PostgreSQL public access enabled" || err "PostgreSQL failed"
-) &
-pids+=($!)
+    -o none 2>&1; then
+    ok "PostgreSQL public access enabled"
+  else
+    err "PostgreSQL failed"
+    exit 1
+  fi
+}
 
-# 2. Storage Account
-(
+enable_storage_public_access() {
   substep "Storage: enable public access"
-  az storage account update \
+  if az storage account update \
     -g "$RG" -n "$STORAGE" \
     --public-network-access Enabled \
-    -o none 2>&1 && ok "Storage public access enabled" || err "Storage failed"
-) &
-pids+=($!)
+    -o none 2>&1; then
+    ok "Storage public access enabled"
+  else
+    err "Storage failed"
+    exit 1
+  fi
+}
 
-# 3. Redis Cache
-(
+enable_redis_public_access() {
   substep "Redis: enable public access"
-  az redis update \
+  if az redis update \
     -g "$RG" -n "$REDIS" \
     --set publicNetworkAccess=Enabled \
-    -o none 2>&1 && ok "Redis public access enabled" || err "Redis failed"
-) &
-pids+=($!)
+    -o none 2>&1; then
+    ok "Redis public access enabled"
+  else
+    err "Redis failed"
+    exit 1
+  fi
+}
 
-# 4. Service Bus
-(
+enable_servicebus_public_access() {
   substep "Service Bus: enable public access"
-  az servicebus namespace update \
+  if az servicebus namespace update \
     -g "$RG" -n "$SB" \
     --public-network-access Enabled \
-    -o none 2>&1 && ok "Service Bus public access enabled" || err "Service Bus failed"
-) &
-pids+=($!)
+    -o none 2>&1; then
+    ok "Service Bus public access enabled"
+  else
+    err "Service Bus failed"
+    exit 1
+  fi
+}
 
-# 5. Key Vault
-(
+enable_keyvault_public_access() {
   substep "Key Vault: enable public access"
-  az keyvault update \
+  if az keyvault update \
     -g "$RG" -n "$KV" \
     --public-network-access Enabled \
-    -o none 2>&1 && ok "Key Vault public access enabled" || err "Key Vault failed"
-) &
-pids+=($!)
+    -o none 2>&1; then
+    ok "Key Vault public access enabled"
+  else
+    err "Key Vault failed"
+    exit 1
+  fi
+}
 
-# 6. ACR
-(
+enable_acr_public_access() {
   substep "ACR: enable public access"
-  az acr update \
+  if az acr update \
     -g "$RG" -n "$ACR" \
     --public-network-enabled true \
-    -o none 2>&1 && ok "ACR public access enabled" || err "ACR failed"
+    -o none 2>&1; then
+    ok "ACR public access enabled"
+  else
+    err "ACR failed"
+    exit 1
+  fi
+}
+
+enable_aks_public_access() {
+  substep "AKS: clear authorized IP ranges"
+  if az aks update \
+    -g "$RG" -n "$AKS" \
+    --api-server-authorized-ip-ranges "" \
+    -o none 2>&1; then
+    ok "AKS API server open"
+  else
+    err "AKS failed"
+    exit 1
+  fi
+}
+
+# 1. Start PostgreSQL first.
+ensure_postgres_running
+
+# 2. Enable Storage public access before the larger parallel batch.
+enable_storage_public_access
+
+# 3. Start AKS and enable remaining public access settings in parallel.
+pids=()
+
+(
+  enable_postgres_public_access
 ) &
 pids+=($!)
 
-# 7. AKS API server (authorized IP ranges — allow all)
 (
-  substep "AKS: clear authorized IP ranges"
-  az aks update \
-    -g "$RG" -n "$AKS" \
-    --api-server-authorized-ip-ranges "" \
-    -o none 2>&1 && ok "AKS API server open" || err "AKS failed"
+  enable_redis_public_access
+) &
+pids+=($!)
+
+(
+  enable_servicebus_public_access
+) &
+pids+=($!)
+
+(
+  enable_keyvault_public_access
+) &
+pids+=($!)
+
+(
+  enable_acr_public_access
+) &
+pids+=($!)
+
+(
+  ensure_aks_running
+  enable_aks_public_access
 ) &
 pids+=($!)
 
