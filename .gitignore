@@ -24,6 +24,7 @@ out/
 dist/
 build/
 .turbo/
+*.tsbuildinfo
 
 # Secrets
 *.pem
@@ -32,6 +33,9 @@ build/
 
 # Local environment & generated names (created by scripts/init-names.sh)
 .local.env
+.ingress-ip
+.last-image-tag
+up.log
 # Local docker-compose secrets (created by scripts/local-up.sh)
 .env.local
 
