@@ -79,3 +79,40 @@ az servicebus topic subscription show `
   --query "{active:countDetails.activeMessageCount,deadletter:countDetails.deadLetterMessageCount,status:status}" `
   -o json
 ```
+
+## Service Bus Baseline Verification
+
+This baseline was validated before injecting a Service Bus fault. It proves the healthy asynchronous path:
+
+```text
+checkout-service -> Service Bus topic orders -> subscription inventory -> inventory-service -> inventory DB
+```
+
+Test order placed through the live public checkout API:
+
+```text
+POST http://20.207.102.43.nip.io/api/checkout
+orderId: a38be3b276674a2d
+status: placed
+totalCents: 61200
+```
+
+Order payload used one unit of each Universal Adapter SKU:
+
+| SKU | Qty Ordered | Inventory Before | Inventory After |
+|---|---:|---:|---:|
+| `tech-02-black` | 1 | 223 | 222 |
+| `tech-02-silver` | 1 | 127 | 126 |
+| `tech-02-sand` | 1 | 300 | 299 |
+| `tech-02-navy` | 1 | 265 | 264 |
+
+Live inventory was queried from inside the `vinex22` namespace because `inventory-service` is not exposed publicly:
+
+```powershell
+$skus = @('tech-02-black','tech-02-silver','tech-02-sand','tech-02-navy')
+foreach ($sku in $skus) {
+  kubectl --kubeconfig kubeconfig -n vinex22 run "inv-check-$($sku -replace '[^a-z0-9-]','-')" --rm -i --restart=Never --image=curlimages/curl --quiet -- "http://inventory-service:8080/stock/$sku"
+}
+```
+
+Result: inventory decremented by exactly one for each ordered SKU, confirming that Service Bus publish and consume were working end to end at the time of the test.
