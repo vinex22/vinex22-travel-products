@@ -37,6 +37,10 @@ export default {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
+        },
+        'goomba-walk': {
+          '0%': { transform: 'translateX(-40px)' },
+          '100%': { transform: 'translateX(100vw)' }
         }
       }
     }

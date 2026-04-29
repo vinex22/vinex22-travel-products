@@ -1,6 +1,7 @@
 'use client';
 
 import { useCart } from './CartProvider';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -20,7 +21,8 @@ function skuToImage(sku: string): string {
 }
 
 export function CartPanel() {
-  const { items, open, setOpen, removeItem, checkout, checkoutStatus, orderId } = useCart();
+  const { items, open, setOpen, removeItem, checkoutStatus, orderId, resetCheckout } = useCart();
+  const router = useRouter();
 
   if (!open) return null;
 
@@ -82,22 +84,18 @@ export function CartPanel() {
               </div>
             )}
             <button
-              onClick={checkout}
-              disabled={checkoutStatus === 'loading'}
+              onClick={() => { setOpen(false); router.push('/checkout'); }}
               className="w-full rounded-full bg-[#0066cc] hover:bg-[#0077ed] disabled:opacity-50 text-white py-3 text-sm font-medium transition-colors"
             >
-              {checkoutStatus === 'loading' ? 'Placing order...' : 'Checkout'}
+              Checkout
             </button>
-            {checkoutStatus === 'error' && (
-              <p className="mt-2 text-xs text-red-500 text-center">Order failed. Please try again.</p>
-            )}
           </div>
         )}
         {checkoutStatus === 'success' && (
           <div className="px-6 py-8 text-center">
             <p className="text-lg font-semibold text-ink dark:text-paper">Order placed!</p>
             <p className="text-xs text-ink-mute mt-1">Order ID: {orderId}</p>
-            <button onClick={() => setOpen(false)} className="mt-4 text-sm text-[#0066cc] hover:underline">
+            <button onClick={() => { resetCheckout(); setOpen(false); }} className="mt-4 text-sm text-[#0066cc] hover:underline">
               Continue shopping
             </button>
           </div>

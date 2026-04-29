@@ -125,16 +125,29 @@ export default function Home() {
   return (
     <div className="bg-paper-warm dark:bg-black">
       <div className="px-2 md:px-3 pt-2 md:pt-3 pb-2 md:pb-3 space-y-2 md:space-y-3">
-        {rows.map((row, idx) =>
-          row.kind === 'full' ? (
-            <ProductTile key={idx} tile={row.tile} priority={idx === 0} />
-          ) : (
-            <div key={idx} className="grid md:grid-cols-2 gap-2 md:gap-3">
-              <ProductTile tile={row.a} priority={false} />
-              <ProductTile tile={row.b} priority={false} />
-            </div>
-          )
-        )}
+        {rows.map((row, idx) => (
+          <div key={idx}>
+            {row.kind === 'full' ? (
+              <ProductTile tile={row.tile} priority={idx === 0} />
+            ) : (
+              <div className="grid md:grid-cols-2 gap-2 md:gap-3">
+                <ProductTile tile={row.a} priority={false} />
+                <ProductTile tile={row.b} priority={false} />
+              </div>
+            )}
+            {/* Goomba easter egg — walks across after the first tile row */}
+            {idx === 0 && (
+              <div className="overflow-hidden py-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://media.tenor.com/F24jLHLBN6YAAAAM/super-mario-goomba.gif"
+                  alt="Goomba"
+                  className="h-10 animate-[goomba-walk_8s_linear_infinite]"
+                />
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

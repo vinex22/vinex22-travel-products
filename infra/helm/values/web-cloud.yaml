@@ -51,3 +51,7 @@ ingress:
       pathType: Prefix
     - path: /api/checkout
       pathType: Prefix
+    - path: /api/orders
+      pathType: Prefix
+    - path: /api/beacon
+      pathType: Prefix
