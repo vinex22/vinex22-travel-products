@@ -32,6 +32,7 @@ async function fetchJson<T>(base: string, path: string, init?: { method?: 'GET' 
     const text = await r.body.text();
     throw new UpstreamError(r.statusCode, text);
   }
+  if (r.statusCode === 204) return undefined as T;
   return r.body.json() as Promise<T>;
 }
 
@@ -65,8 +66,19 @@ app.post<{ Params: { userId: string }; Body: { sku: string; qty: number } }>(
   async (req) => fetchJson(upstreams.cart, `/carts/${encodeURIComponent(req.params.userId)}/items`,
     { method: 'POST', body: req.body }));
 
+app.delete<{ Params: { userId: string } }>('/api/cart/:userId', async (req, reply) => {
+  await fetchJson<void>(upstreams.cart, `/carts/${encodeURIComponent(req.params.userId)}`, { method: 'DELETE' });
+  reply.status(204).send();
+});
+
 app.post<{ Body: unknown }>('/api/checkout', async (req) =>
   fetchJson(upstreams.checkout, '/checkout', { method: 'POST', body: req.body }));
+
+app.get('/api/orders', async () =>
+  fetchJson(upstreams.checkout, '/orders'));
+
+app.get<{ Params: { id: string } }>('/api/orders/:id', async (req) =>
+  fetchJson(upstreams.checkout, `/orders/${encodeURIComponent(req.params.id)}`));
 
 app.setErrorHandler((err, _req, reply) => {
   if (err instanceof UpstreamError) {
